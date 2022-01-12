@@ -1,23 +1,45 @@
 import styled from "@emotion/styled";
+import { css } from "@emotion/css";
 import Container from "@mui/material/Container";
 
-export const Containers = styled(Container)`
-  box-shadow: 0px 31px 50px rgb(0 0 0 / 1%),
-    0px 0px 104.981px rgb(38 36 36 / 6%),
-    0px -0.532008px 31.2555px rgb(38 36 36 / 4%);
+export const Containers = styled(Container, {
+  color: "text.secondary",
+  m: 2,
+  p: 2,
+  sx: {
+    my: 2,
+  },
+})`
+  box-shadow: 0px 3px 10px #d6d6d6, 0px 0px 33px #d6d6d6, 0px 8px 400px #d6d6d6;
 
-  height: 90vh;
+  height: 100%;
   border-radius: 1rem;
-  /* background-color: ${({ theme: { colors } }) => colors.primary}; */
+  width: 50%;
+  display: flex;
+  align-items: center;
+  margin: 15% auto;
+  justify-content: center;
+  /* padding: 50px 0px; */
+
+  /* background-color: ${({ theme: { colors } }) => colors.background}; */
 `;
 
-export const DivCenter = styled.div`
+export const DivCenter = styled(Container)`
   display: flex;
   height: 100%;
   width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  ${(props) =>
+    props.dark &&
+    css`
+      height: 100%;
+      border-radius: 1rem;
+      width: 50%;
+      display: flex;
+      align-items: center;
+      margin: 15% auto;
+      justify-content: center;
+    `}
 `;
-
-

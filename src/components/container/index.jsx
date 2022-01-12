@@ -1,12 +1,13 @@
 // import Container from "@mui/material/Container";
 import { Checkbox, FormControlLabel } from "@mui/material";
-import { Containers, DivCenter } from "./styled";
+import { Buttons } from "../button";
+import { Containers, DivCenter, InputIguim } from "./styled";
 
 export const Body = () => {
   return (
     <div>
       <Containers>
-        <DivCenter>
+        <DivCenter dark>
           Qual a sua profissão?
           <div
             style={{
@@ -38,6 +39,7 @@ export const Body = () => {
               control={<Checkbox defaultChecked />}
               label="paciente"
             />
+            <Buttons></Buttons>
           </div>
         </DivCenter>
       </Containers>

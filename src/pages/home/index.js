@@ -10,7 +10,7 @@ import SaveIcon from "@mui/icons-material/Save";
 import React, { useState } from "react";
 import { useNavigate, Outlet } from "react-router-dom";
 import { useRequest, RequestActionTypes } from "../../utils/hooks";
-import { Bottun } from "../../components/button";
+import { Buttons } from "../../components/button";
 import { Body } from "../../components/container";
 
 const Home = () => {
@@ -35,11 +35,10 @@ const Home = () => {
   return (
     <>
       <div>
-        {/* <Typography variant="h1">Home</Typography> */}
+        {/*  <Typography variant="h4">Home</Typography>  */}
         {/* <Bottun></Bottun> */}
-        <Body>
-         
-        </Body>
+        <Body></Body>
+        {/* <Buttons></Buttons> */}
         {/* <LoadingButton
           loadingIndicator={<CircularProgress color="inherit" size={16} />}
           loading={requestState.status === RequestActionTypes.FETCHING}

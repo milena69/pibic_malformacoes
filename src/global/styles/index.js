@@ -2,7 +2,10 @@ import { createTheme } from "@mui/material/styles";
 
 const theme = {
   colors: {
-    primary: "#5636D3",
+    primary: "#5EEAC3",
+    primary_ligth: "#A6F5DF",
+    primary_dark: "#15C795",
+    // warning: "#EE9900",
     secondary: "#FF872C",
     secondary_light: "#FF872C3A",
     success: "#12A454",
