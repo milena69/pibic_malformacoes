@@ -1,10 +1,13 @@
 import { createTheme } from "@mui/material/styles";
 
-const theme = {
+export const theme = {
   colors: {
-    primary: "#5EEAC3",
-    primary_ligth: "#A6F5DF",
-    primary_dark: "#15C795",
+    primary: "#27A683",
+    primary_ligth: "#66D2B4",
+    primary_dark: "#287D66",
+    // primary: "#5EEAC3",
+    // primary_ligth: "#A6F5DF",
+    // primary_dark: "#15C795",
     // warning: "#EE9900",
     secondary: "#FF872C",
     secondary_light: "#FF872C3A",

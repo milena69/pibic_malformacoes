@@ -9,7 +9,7 @@ export const Containers = styled(Container)`
   width: 50%;
   display: flex;
   align-items: center;
-  margin: 15% auto;
+  margin: 5% auto;
   padding: 50px 0px;
 
   /* background-color: ${({ theme: { colors } }) => colors.background}; */
@@ -30,7 +30,7 @@ export const DivCenter = styled(Container)`
       width: 50%;
       display: flex;
       align-items: center;
-      margin: 15% auto;
+      margin: 5% auto;
       justify-content: center;
     `}
 `;

@@ -5,11 +5,12 @@ export const Buttons = ({ icone, isLoading, titulo, voltar }) => {
   return (
     <div>
       <Botao
-        voltar={voltar}
+        variant="contained"
+        {...(voltar && { variant: "outlined" })}
         loading={isLoading}
-        loadingPosition="end"
-
+        voltar={voltar}
         // color="primary"
+        // loadingPosition="end"
         //endIcon={<ArrowCircleRightIcon />} //{icone}
         // variant="contained"
       >
