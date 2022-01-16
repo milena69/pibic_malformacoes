@@ -38,7 +38,7 @@ const Home = () => {
     <>
       <div>
         <Body>
-          <DivCenter dark>
+          <DivCenter dark="true">
             <Titulo>Qual a sua profissão?</Titulo>
             <div
               style={{
@@ -79,7 +79,7 @@ const Home = () => {
                 marginTop: "50px",
               }}
             >
-              <Buttons titulo="Voltar" voltar />
+              <Buttons titulo="Voltar" voltar="true" />
               <Buttons titulo="Próximo" />
             </div>
           </DivCenter>
