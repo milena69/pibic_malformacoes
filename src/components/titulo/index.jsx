@@ -1,9 +1,5 @@
-import React from 'react'
-
-export const Titulo = ({children}) => {
-    return (
-        <h1>
-            {children}
-        </h1>
-    )
-}
+import React from "react";
+import { Title } from "./styled";
+export const Titulo = ({ children }) => {
+  return <Title>{children}</Title>;
+};

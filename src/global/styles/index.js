@@ -24,7 +24,7 @@ export const theme = {
   },
 };
 
-const projectTheme = createTheme({
+export const projectTheme = createTheme({
   palette: {
     type: "light",
     primary: {
@@ -41,6 +41,11 @@ const projectTheme = createTheme({
     h2: {
       fontFamily: "Roboto",
       fontWeight: 400,
+    },
+    h1: {
+      fontFamily: "Poppins",
+      fontWeight: 500,
+      fontSize: 22,
     },
   },
   ...theme,
