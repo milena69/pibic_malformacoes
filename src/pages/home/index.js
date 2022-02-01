@@ -14,78 +14,93 @@ import { Buttons } from "../../components/button";
 import { Body } from "../../components/container";
 import { DivCenter } from "../../components/container/styled";
 import { Titulo } from "../../components/titulo";
+import questionario from "../../assets/questionario.json";
 
 const Home = () => {
-  const navigate = useNavigate();
-  const [produtos, setProdutos] = useState(null);
-  const [mensagemErro, setMensagemErro] = useState("");
-  const [requestState, { get, post }] = useRequest();
+  //console.log(questionario);
+  const [step, setStep] = useState(0);
+  const [isLoading, setisLoading] = useState(!!questionario);
+  const [checked, setChecked] = useState(false);
+  const toggleCheckbox = (check) => {
+    // check.target.name = check.target.checked;
+    const teste = { [check.target.name]: check.target.checked };
+    //console.log("target", check.target);
 
-  const buscarProdutos = async () => {
-    try {
-      const produtinhos = await get("produtos");
-      const cep = await get("buscarcep/36773578");
-      setProdutos(produtinhos);
-      console.log(cep);
-      console.log(produtinhos);
-    } catch (err) {
-      setMensagemErro(err?.data?.mensagem ?? "Algo de errado não está certo");
-      console.log("Error", err?.data?.mensagem);
-    }
+    setChecked(check.target.checked);
   };
+  // function handleClick(e, c) {
+  //   console.log("teste", e);
+  //   // this.setChecked({ [check.target.id]: check.target.checked });
+  // }
+
+  // const navigate = useNavigate();
+  // const [produtos, setProdutos] = useState(null);
+  // const [mensagemErro, setMensagemErro] = useState("");
+  // const [requestState, { get, post }] = useRequest();
+
+  // const buscarProdutos = async () => {
+  //   try {
+  //     const produtinhos = await get("produtos");
+  //     const cep = await get("buscarcep/36773578");
+  //     setProdutos(produtinhos);
+  //     console.log(cep);
+  //     console.log(produtinhos);
+  //   } catch (err) {
+  //     setMensagemErro(err?.data?.mensagem ?? "Algo de errado não está certo");
+  //     console.log("Error", err?.data?.mensagem);
+  //   }
+  // };
 
   return (
     <>
-      <div>
-        <Body>
-          <DivCenter dark="true">
-            <Titulo>Qual a sua profissão?</Titulo>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <FormControlLabel
-                control={<Checkbox defaultChecked />}
-                label="médico(a)"
-              />
-              <FormControlLabel
-                control={<Checkbox defaultChecked />}
-                label="enfermeiro(a)"
-              />
-              <FormControlLabel
-                control={<Checkbox defaultChecked />}
-                label="técnico(a) de enfermagem"
-              />
-              <FormControlLabel
-                control={<Checkbox defaultChecked />}
-                label="estudante da saúde"
-              />
-              <FormControlLabel
-                control={<Checkbox defaultChecked />}
-                label="outro profissional da área de saúde"
-              />
-              <FormControlLabel
-                control={<Checkbox defaultChecked />}
-                label="paciente"
-              />
-            </div>
-            <div
-              style={{
-                justifyContent: "space-between",
-                display: "flex",
-                width: "100%",
-                marginTop: "50px",
-              }}
-            >
-              <Buttons titulo="Voltar" voltar="true" />
-              <Buttons titulo="Próximo" />
-            </div>
-          </DivCenter>
-        </Body>
-      </div>
-      {/* <Outlet /> */}
+      <Body>
+        <DivCenter dark="true">
+          <Titulo>{questionario.perguntas[step].pergunta}</Titulo>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              marginTop: "25px",
+              alignItems: "justify",
+            }}
+          >
+            {isLoading &&
+              questionario.perguntas[step].respostas.map(({ resposta, id }) => {
+                return (
+                  <FormControlLabel
+                    key={id}
+                    control={
+                      <Checkbox
+                        id={"id" + id}
+                        // name={"".concat("id", id)}
+                        //checked={checked}
+                        //onChange={toggleCheckbox}
+                        //onClick={(e) => this.handleClick(this, id)}
+                      />
+                    }
+                    // defaultChecked
+                    label={resposta}
+                  />
+                );
+              })}
+          </div>
+          <div
+            style={{
+              justifyContent: "space-between",
+              display: "flex",
+              width: "100%",
+              marginTop: "50px",
+            }}
+          >
+            <Buttons
+              titulo="Voltar"
+              voltar="true"
+              onClick={() => setStep(step - 1)}
+            />
+            <Buttons titulo="Próximo" onClick={() => setStep(step + 1)} />
+          </div>
+        </DivCenter>
+      </Body>
     </>
   );
 };

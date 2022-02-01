@@ -1,0 +1,246 @@
+{
+    "perguntas": [
+        {
+            "id": 1,
+            "nome": "profissão",
+            "pergunta": "Qual a sua profissão?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "resposta": "enfermeiro(a)"
+                },
+                {
+                    "id": 2,
+                    "resposta": "médico(a)"
+                },
+                {
+                    "id": 3,
+                    "resposta": "técnico(a) de enfermagem"
+                },
+                {
+                    "id": 4,
+                    "resposta": "estudante da saúde"
+                },
+                {
+                    "id": 5,
+                    "resposta": "outro profissional da área de saúde"
+                },
+                {
+                    "id": 6,
+                    "resposta": "paciente"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "nome": "sexo",
+            "pergunta": "Qual o sexo do(a) paciente?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "resposta": "F"
+                },
+                {
+                    "id": 2,
+                    "resposta": "M"
+                },
+                {
+                    "id": 3,
+                    "resposta": "N"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "nome": "idade",
+            "pergunta": "Qual a idade do(a) paciente?",
+            "respostas": [
+                {
+                    "id": 1,
+                    "resposta": "0 a 5 meses"
+                },
+                {
+                    "id": 2,
+                    "resposta": "6 a 12 meses"
+                },
+                {
+                    "id": 3,
+                    "resposta": "1 a 2 anos"
+                },
+                {
+                    "id": 4,
+                    "resposta": "3 a 5 anos"
+                },
+                {
+                    "id": 5,
+                    "resposta": "6 a 10 anos"
+                },
+                {
+                    "id": 6,
+                    "resposta": "11 a 15 anos"
+                },
+                {
+                    "id": 7,
+                    "resposta": "16 a 20 anos"
+                },
+                {
+                    "id": 8,
+                    "resposta": "acima de 20 anos"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "nome": "peso",
+            "pergunta": "Sobre o peso:",
+            "respostas": [
+                {
+                    "id": 1,
+                    "resposta": "dentro da normalidade"
+                },
+                {
+                    "id": 2,
+                    "resposta": "acima do peso"
+                },
+                {
+                    "id": 3,
+                    "resposta": "abaixo do peso"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "nome": "altura",
+            "pergunta": "Sobre a altura:",
+            "respostas": [
+                {
+                    "id": 1,
+                    "resposta": "dentro da normalidade"
+                },
+                {
+                    "id": 2,
+                    "resposta": "acima da normalidade"
+                },
+                {
+                    "id": 3,
+                    "resposta": "abaixo da normalidade"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "nome": "desenvolvimento-cefalico",
+            "pergunta": "Observando o desenvolvimento cefálico, é possível constatar indícios de:",
+            "respostas": [
+                {
+                    "id": 1,
+                    "resposta": "desenvolvimento dentro da normalidade"
+                },
+                {
+                    "id": 2,
+                    "resposta": "macrocefalia"
+                },
+                {
+                    "id": 3,
+                    "resposta": "microcefalia"
+                },
+                {
+                    "id": 4,
+                    "resposta": "braquicefalia"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "nome": "Formação Ocular",
+            "pergunta": "Sobre a formação ocular, é possível observar:",
+            "respostas": [
+                {
+                    "id": 1,
+                    "resposta": "presença de de fendas palpebrais"
+                },
+                {
+                    "id": 2,
+                    "resposta": "presença de pregas epicântricas"
+                },
+                {
+                    "id": 3,
+                    "resposta": "ptose palpebral"
+                },
+                {
+                    "id": 4,
+                    "resposta": "não há presença de anormalidade"
+                },
+                {
+                    "id": 5,
+                    "resposta": "estrabismo"
+                },
+                {
+                    "id": 6,
+                    "resposta": "catarata"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "nome": "Comprimento dos membros",
+            "pergunta": "O comprimento dos membros inferiores (pernas) está:",
+            "respostas": [
+                {
+                    "id": 1,
+                    "resposta": "dentro da normalidade"
+                },
+                {
+                    "id": 2,
+                    "resposta": "acima da normalidade"
+                },
+                {
+                    "id": 3,
+                    "resposta": "abaixo da normalidade"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "nome": "Comprimento dos membros",
+            "pergunta": "O comprimento dos membros superiores (braços e antebraços) está:",
+            "respostas": [
+                {
+                    "id": 1,
+                    "resposta": "dentro da normalidade"
+                },
+                {
+                    "id": 2,
+                    "resposta": "acima da normalidade"
+                },
+                {
+                    "id": 3,
+                    "resposta": "abaixo da normalidade"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "nome": "Desenvolvimento do pescoço",
+            "pergunta": "Observando o desenvolvimento do pescoço:",
+            "respostas": [
+                {
+                    "id": 1,
+                    "resposta": "pescoço alado"
+                },
+                {
+                    "id": 2,
+                    "resposta": "mais curto que o regular"
+                },
+                {
+                    "id": 3,
+                    "resposta": "mais grosso que o regular"
+                },
+                {
+                    "id": 4,
+                    "resposta": "dentro da regularidade"
+                }
+            ]
+        }
+    ]
+}
