@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 import SaveIcon from "@mui/icons-material/Save";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, Outlet } from "react-router-dom";
 import { useRequest, RequestActionTypes } from "../../utils/hooks";
 import { Buttons } from "../../components/button";
@@ -19,19 +19,54 @@ import questionario from "../../assets/questionario.json";
 const Home = () => {
   //console.log(questionario);
   const [step, setStep] = useState(0);
-  const [isLoading, setisLoading] = useState(!!questionario);
-  const [checked, setChecked] = useState(false);
-  const toggleCheckbox = (check) => {
-    // check.target.name = check.target.checked;
-    const teste = { [check.target.name]: check.target.checked };
-    //console.log("target", check.target);
+  const [isLoading, setIsLoading] = useState(!!questionario);
+  const [checked, setChecked] = useState([]);
+  const [arrayQuestionario, setArrayQuestionario] = useState([]);
+  const [respostasQuestionario, setRespostasQuestionario] = useState([]);
 
-    setChecked(check.target.checked);
+  useEffect(() => {
+    setIsLoading(true);
+    //console.log("antes", questionario.perguntas);
+    let newArrayQuestionario = questionario.perguntas.map((pergunta) => {
+      let newRepostas = pergunta.respostas.map((resposta) => ({
+        ...resposta,
+        respondida: false,
+      }));
+      return {
+        ...pergunta,
+        respostas: newRepostas,
+        respondida: false,
+      };
+    });
+    // console.log("depois", newArrayQuestionario);
+    setArrayQuestionario(newArrayQuestionario);
+    setIsLoading(false);
+    // return () => {
+    //   second;
+    // };
+  }, []);
+
+  const handleCheck = (ev) => {
+    const target = ev.target;
+    const id = target.id;
+    let questao = arrayQuestionario[step];
+    let newRespondidas = questao.respostas.map((resposta) => ({
+      ...resposta,
+      respondida: false,
+    }));
+
+    newRespondidas = questao.respostas[id].respondida = target.checked;
+    questao.respostas = newRespondidas;
+    let newQuestionario = arrayQuestionario.filter(
+      (questao) => questao[step].respostas[id].id != id
+    );
+    setArrayQuestionario([newQuestionario, questao]);
+    // console.log("cagada", arrayQuestionario);
+    // let newChecked = [];
+    // newChecked[id] = target.checked;
+    // console.log("checkou: " + newChecked);
+    // setChecked(newChecked);
   };
-  // function handleClick(e, c) {
-  //   console.log("teste", e);
-  //   // this.setChecked({ [check.target.id]: check.target.checked });
-  // }
 
   // const navigate = useNavigate();
   // const [produtos, setProdutos] = useState(null);
@@ -54,27 +89,26 @@ const Home = () => {
   return (
     <>
       <Body>
-        <DivCenter dark="true">
-          <Titulo>{questionario.perguntas[step].pergunta}</Titulo>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              marginTop: "25px",
-              alignItems: "justify",
-            }}
-          >
-            {isLoading &&
-              questionario.perguntas[step].respostas.map(({ resposta, id }) => {
+        {!isLoading && (
+          <DivCenter dark="true">
+            <Titulo>{arrayQuestionario[step].pergunta}</Titulo>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                marginTop: "25px",
+                alignItems: "justify",
+              }}
+            >
+              {arrayQuestionario[step].respostas.map(({ resposta, id }) => {
                 return (
                   <FormControlLabel
                     key={id}
                     control={
                       <Checkbox
-                        id={"id" + id}
-                        // name={"".concat("id", id)}
-                        //checked={checked}
-                        //onChange={toggleCheckbox}
+                        id={id}
+                        checked={resposta.respondida}
+                        onChange={handleCheck}
                         //onClick={(e) => this.handleClick(this, id)}
                       />
                     }
@@ -83,23 +117,24 @@ const Home = () => {
                   />
                 );
               })}
-          </div>
-          <div
-            style={{
-              justifyContent: "space-between",
-              display: "flex",
-              width: "100%",
-              marginTop: "50px",
-            }}
-          >
-            <Buttons
-              titulo="Voltar"
-              voltar="true"
-              onClick={() => setStep(step - 1)}
-            />
-            <Buttons titulo="Próximo" onClick={() => setStep(step + 1)} />
-          </div>
-        </DivCenter>
+            </div>
+            <div
+              style={{
+                justifyContent: "space-between",
+                display: "flex",
+                width: "100%",
+                marginTop: "50px",
+              }}
+            >
+              <Buttons
+                titulo="Voltar"
+                voltar="true"
+                onClick={() => setStep(step - 1)}
+              />
+              <Buttons titulo="Próximo" onClick={() => setStep(step + 1)} />
+            </div>
+          </DivCenter>
+        )}
       </Body>
     </>
   );
