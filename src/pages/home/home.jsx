@@ -1,15 +1,5 @@
-import {
-  Button,
-  Checkbox,
-  CircularProgress,
-  FormControlLabel,
-  Typography,
-} from '@mui/material';
-import { LoadingButton } from '@mui/lab';
-import SaveIcon from '@mui/icons-material/Save';
+import { Checkbox, FormControlLabel } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import { useNavigate, Outlet } from 'react-router-dom';
-import { useRequest, RequestActionTypes } from '../../utils/hooks';
 import { Buttons, Body, Titulo, ProgressBar } from '../../components';
 import questionario from '../../assets/questionario.json';
 
@@ -20,22 +10,23 @@ const Home = () => {
   const [checked, setChecked] = useState([]);
   const [arrayQuestionario, setArrayQuestionario] = useState([]);
   const [respostasQuestionario, setRespostasQuestionario] = useState([]);
+  const [isAnimated, setIsAnimated] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
-    //console.log("antes", questionario.perguntas);
+    console.log('antes', questionario.perguntas);
     let newArrayQuestionario = questionario.perguntas.map((pergunta) => {
       let newRepostas = pergunta.respostas.map((resposta) => ({
         ...resposta,
-        respondida: false,
+        checked: false,
       }));
       return {
         ...pergunta,
         respostas: newRepostas,
-        checked: false,
+        respondida: false,
       };
     });
-    // console.log("depois", newArrayQuestionario);
+    console.log('depois', newArrayQuestionario);
     setArrayQuestionario(newArrayQuestionario);
     setIsLoading(false);
     // return () => {
@@ -65,30 +56,30 @@ const Home = () => {
     // setChecked(newChecked);
   };
 
-  // const navigate = useNavigate();
-  // const [produtos, setProdutos] = useState(null);
-  // const [mensagemErro, setMensagemErro] = useState("");
-  // const [requestState, { get, post }] = useRequest();
-
-  // const buscarProdutos = async () => {
-  //   try {
-  //     const produtinhos = await get("produtos");
-  //     const cep = await get("buscarcep/36773578");
-  //     setProdutos(produtinhos);
-  //     console.log(cep);
-  //     console.log(produtinhos);
-  //   } catch (err) {
-  //     setMensagemErro(err?.data?.mensagem ?? "Algo de errado não está certo");
-  //     console.log("Error", err?.data?.mensagem);
-  //   }
-  // };
+  const handleAvancar = () => {
+    setIsAnimated(true);
+    setStep(step + 1);
+    setTimeout(() => setIsAnimated(false), 1000);
+  };
+  const handleVoltar = () => {
+    setIsAnimated(true);
+    setStep(step - 1);
+    setTimeout(() => setIsAnimated(false), 1000);
+  };
 
   return (
     <>
       <Body>
         {!isLoading && (
           <>
-            <ProgressBar progresso={40} animated={false} />
+            <ProgressBar
+              progresso={((step + 1) * 100) / arrayQuestionario.length}
+              animated={isAnimated}
+            />
+            <div>
+              {step + 1}/{arrayQuestionario.length}
+            </div>
+            <div style={{ marginTop: 30 }} />
             <Titulo>{arrayQuestionario[step].pergunta}</Titulo>
             <div
               style={{
@@ -124,12 +115,8 @@ const Home = () => {
                 marginTop: '50px',
               }}
             >
-              <Buttons
-                titulo='Voltar'
-                voltar='true'
-                onClick={() => setStep(step - 1)}
-              />
-              <Buttons titulo='Próximo' onClick={() => setStep(step + 1)} />
+              <Buttons titulo='Voltar' voltar='true' onClick={handleVoltar} />
+              <Buttons titulo='Próximo' onClick={handleAvancar} />
             </div>
           </>
         )}

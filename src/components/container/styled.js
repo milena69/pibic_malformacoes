@@ -4,15 +4,18 @@ import Container from '@mui/material/Container';
 
 export const Containers = styled(Container)`
   box-shadow: 0px 3px 10px #d6d6d6, 0px 0px 33px #d6d6d6, 0px 8px 400px #d6d6d6;
-  height: 100%;
   border-radius: 1rem;
-  width: 50%;
+  width: 50vw;
+  min-width: 260px;
   display: flex;
   align-items: center;
   margin: 5% auto;
-  padding: 50px 0px;
+  padding: 50px 20px;
 
   background-color: ${({ theme: { colors } }) => colors.background};
+  @media (max-width: 500px) {
+    width: 90%;
+  }
 `;
 
 export const DivCenter = styled(Container)`
