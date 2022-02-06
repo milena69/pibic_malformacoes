@@ -4,6 +4,7 @@
             "id": "0",
             "nome": "profissão",
             "pergunta": "Qual a sua profissão?",
+            "multiplaEscolha": true,
             "respostas": [
                 {
                     "id": "0",
@@ -35,6 +36,7 @@
             "id": "1",
             "nome": "sexo",
             "pergunta": "Qual o sexo do(a) paciente?",
+            "multiplaEscolha": false,
             "respostas": [
                 {
                     "id": "0",
@@ -54,6 +56,7 @@
             "id": "2",
             "nome": "idade",
             "pergunta": "Qual a idade do(a) paciente?",
+            "multiplaEscolha": false,
             "respostas": [
                 {
                     "id": "0",
@@ -93,6 +96,7 @@
             "id": "3",
             "nome": "peso",
             "pergunta": "Sobre o peso:",
+            "multiplaEscolha": false,
             "respostas": [
                 {
                     "id": "0",
@@ -112,6 +116,7 @@
             "id": "4",
             "nome": "altura",
             "pergunta": "Sobre a altura:",
+            "multiplaEscolha": false,
             "respostas": [
                 {
                     "id": "0",
@@ -131,6 +136,7 @@
             "id": "5",
             "nome": "desenvolvimento-cefalico",
             "pergunta": "Observando o desenvolvimento cefálico, é possível constatar indícios de:",
+            "multiplaEscolha": false,
             "respostas": [
                 {
                     "id": "0",
@@ -154,6 +160,7 @@
             "id": "6",
             "nome": "Formação Ocular",
             "pergunta": "Sobre a formação ocular, é possível observar:",
+            "multiplaEscolha": false,
             "respostas": [
                 {
                     "id": "0",
@@ -185,6 +192,7 @@
             "id": "7",
             "nome": "Comprimento dos membros",
             "pergunta": "O comprimento dos membros inferiores (pernas) está:",
+            "multiplaEscolha": false,
             "respostas": [
                 {
                     "id": "0",
@@ -204,6 +212,7 @@
             "id": "8",
             "nome": "Comprimento dos membros",
             "pergunta": "O comprimento dos membros superiores (braços e antebraços) está:",
+            "multiplaEscolha": false,
             "respostas": [
                 {
                     "id": "0",
@@ -223,6 +232,7 @@
             "id": "9",
             "nome": "Desenvolvimento do pescoço",
             "pergunta": "Observando o desenvolvimento do pescoço:",
+            "multiplaEscolha": false,
             "respostas": [
                 {
                     "id": "0",

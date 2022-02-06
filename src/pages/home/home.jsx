@@ -4,17 +4,14 @@ import { Buttons, Body, Titulo, ProgressBar } from '../../components';
 import questionario from '../../assets/questionario.json';
 
 const Home = () => {
-  //console.log(questionario);
+  const [isAnimated, setIsAnimated] = useState(false);
   const [step, setStep] = useState(0);
   const [isLoading, setIsLoading] = useState(!!questionario);
-  const [checked, setChecked] = useState([]);
   const [arrayQuestionario, setArrayQuestionario] = useState([]);
-  const [respostasQuestionario, setRespostasQuestionario] = useState([]);
-  const [isAnimated, setIsAnimated] = useState(false);
+  const [respostasQuestao, setRespostasQuestao] = useState([]);
 
   useEffect(() => {
     setIsLoading(true);
-    // console.log('antes', questionario.perguntas);
     let newArrayQuestionario = questionario.perguntas.map((pergunta) => {
       let newRepostas = pergunta.respostas.map((resposta) => ({
         ...resposta,
@@ -26,84 +23,67 @@ const Home = () => {
         respondida: false,
       };
     });
-    // console.log('depois', newArrayQuestionario);
     setArrayQuestionario(newArrayQuestionario);
+    setRespostasQuestao(newArrayQuestionario[step].respostas);
     setIsLoading(false);
-    // return () => {
-    //   second;
-    // };
   }, []);
 
-  const handleCheck = (ev) => {
-    const target = ev.target;
-    const id = target.id;
-    let questao = arrayQuestionario[step];
-    let newRespondidas = questao.respostas.map((resposta) => ({
-      ...resposta,
-      respondida: false,
-    }));
-
-    newRespondidas = questao.respostas[id].respondida = target.checked;
-    questao.respostas = newRespondidas;
-    let newQuestionario = arrayQuestionario.filter(
-      (questao) => questao[step].respostas[id].id != id
-    );
-    setArrayQuestionario([newQuestionario, questao]);
-    // console.log("cagada", arrayQuestionario);
-    // let newChecked = [];
-    // newChecked[id] = target.checked;
-    // console.log("checkou: " + newChecked);
-    // setChecked(newChecked);
-  };
+  useEffect(() => {
+    console.log('Questionário:', arrayQuestionario);
+  }, [arrayQuestionario]);
 
   const handleAvancar = () => {
-    setIsAnimated(true);
-    setStep(step + 1);
-    setTimeout(() => setIsAnimated(false), 1000);
+    // verifica se tem alguma resposta marcada
+    if (respostasQuestao.some((resposta) => resposta.checked)) {
+      const newStep = step + 1;
+      let newRespostas = arrayQuestionario.map((x) => x); // Copia array
+      newRespostas[step].respostas = respostasQuestao;
+      newRespostas[step].respondida = true;
+      setArrayQuestionario(newRespostas);
+
+      setRespostasQuestao(arrayQuestionario[newStep].respostas); // Para aparecer as novas questões
+      setIsAnimated(true);
+      setStep(newStep);
+      setTimeout(() => setIsAnimated(false), 1000);
+    } else {
+      window.alert('preenche direito');
+    }
   };
+
   const handleVoltar = () => {
     setIsAnimated(true);
     setStep(step - 1);
     setTimeout(() => setIsAnimated(false), 1000);
   };
 
+  console.log('Olha as respostas', respostasQuestao);
+
   const handleCheckChange = ({ target: { checked } }, idResposta) => {
     // console.log('id:', idResposta);
-    let questionario = arrayQuestionario;
-    let respostas = arrayQuestionario[step].respostas;
-    console.log('Reposta:', idResposta, '\nValor:', checked);
-    const index = respostas?.findIndex((x) => x.id === idResposta);
+    const index = respostasQuestao?.findIndex((x) => x.id === idResposta);
+    let newRespostas = [];
 
-    respostas = respostas?.map(({ id, resposta }) => {
-      return {
-        id,
-        resposta,
-        checked: false,
-      };
-    });
-    // console.log(questao);
-    respostas[index].checked = checked;
-    console.log(questionario);
-    questionario[step].respostas = respostas;
-    setArrayQuestionario([...questionario]);
-    console.log(arrayQuestionario);
-    // console.log('Questão:', step, '\nResposta:', index);
-    // data[index].respostas.map((resposta) =>(resposta.))
-    // checked = true;
-    // data[index].resposta_cadastrada = 'Sim';
-
-    // this.setState(data);
-    // console.log({ data: arrayQuestionario });
-  };
-
-  const onCheckChanged2 = (idQuestao) => {
-    const data = arrayQuestionario;
-
-    const index = data.findIndex((index) => index.id === idQuestao);
-    data[index].checked = false;
-
-    this.setState(data);
-    console.log({ data: arrayQuestionario });
+    if (!arrayQuestionario[step].multiplaEscolha) {
+      newRespostas = respostasQuestao.map(({ id, resposta }) => {
+        return {
+          id,
+          resposta,
+          checked: false,
+        };
+      });
+    } else {
+      newRespostas = respostasQuestao.map(
+        ({ id, resposta, checked: check }) => {
+          return {
+            id,
+            resposta,
+            checked: check,
+          };
+        }
+      );
+    }
+    newRespostas[index].checked = checked;
+    setRespostasQuestao(newRespostas);
   };
 
   return (
@@ -135,13 +115,10 @@ const Home = () => {
                     control={
                       <Checkbox
                         id={id}
-                        checked={resposta.checked}
-                        // onChange={handleCheck}
+                        checked={respostasQuestao[id].checked}
                         onChange={(evento) => handleCheckChange(evento, id)}
-                        //onClick={(e) => this.handleClick(this, id)}
                       />
                     }
-                    // defaultChecked
                     label={resposta}
                   />
                 );
@@ -190,3 +167,25 @@ export default Home;
 //     <h1>{mensagemErro}</h1>
 //   )}
 // </div>
+
+// const handleCheck = (ev) => {
+//   const target = ev.target;
+//   const id = target.id;
+//   let questao = arrayQuestionario[step];
+//   let newRespondidas = questao.respostas.map((resposta) => ({
+//     ...resposta,
+//     respondida: false,
+//   }));
+
+//   newRespondidas = questao.respostas[id].respondida = target.checked;
+//   questao.respostas = newRespondidas;
+//   let newQuestionario = arrayQuestionario.filter(
+//     (questao) => questao[step].respostas[id].id != id
+//   );
+//   setArrayQuestionario([newQuestionario, questao]);
+//   // console.log("cagada", arrayQuestionario);
+//   // let newChecked = [];
+//   // newChecked[id] = target.checked;
+//   // console.log("checkou: " + newChecked);
+//   // setChecked(newChecked);
+// };
