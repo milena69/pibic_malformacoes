@@ -51,6 +51,7 @@ const Home = () => {
   };
 
   const handleVoltar = () => {
+    setRespostasQuestao(arrayQuestionario[step - 1].respostas); // Para aparecer as novas questões
     setIsAnimated(true);
     setStep(step - 1);
     setTimeout(() => setIsAnimated(false), 1000);
@@ -59,10 +60,10 @@ const Home = () => {
   console.log('Olha as respostas', respostasQuestao);
 
   const handleCheckChange = ({ target: { checked } }, idResposta) => {
-    // console.log('id:', idResposta);
     const index = respostasQuestao?.findIndex((x) => x.id === idResposta);
     let newRespostas = [];
 
+    // Se não for múltiplaEscolha troca tudo pra falso antes de trocar o que foi clicado
     if (!arrayQuestionario[step].multiplaEscolha) {
       newRespostas = respostasQuestao.map(({ id, resposta }) => {
         return {
@@ -84,6 +85,10 @@ const Home = () => {
     }
     newRespostas[index].checked = checked;
     setRespostasQuestao(newRespostas);
+  };
+
+  const handleConcluir = () => {
+    window.alert('acabouuu, que festa!');
   };
 
   return (
@@ -132,8 +137,20 @@ const Home = () => {
                 marginTop: '50px',
               }}
             >
-              <Buttons titulo='Voltar' voltar='true' onClick={handleVoltar} />
-              <Buttons titulo='Próximo' onClick={handleAvancar} />
+              <Buttons
+                titulo='Voltar'
+                voltar='true'
+                onClick={handleVoltar}
+                disabled={step < 1}
+              />
+              <Buttons
+                titulo='Próximo'
+                onClick={handleAvancar}
+                {...(step + 1 === arrayQuestionario.length && {
+                  titulo: 'Concluir',
+                  onClick: handleConcluir,
+                })}
+              />
             </div>
           </>
         )}

@@ -1,11 +1,11 @@
-import styled, { css } from "styled-components";
-import { theme } from "../../global/styles";
-import { projectTheme } from "../../global/styles";
+import styled, { css } from 'styled-components';
+import { theme } from '../../global/styles';
+import { projectTheme } from '../../global/styles';
 export const Title = styled.h1`
   ${projectTheme?.typography.h1}
   color: ${theme?.colors?.title};
   display: flex;
-  text-align: justify;
+  text-align: center;
   //justify-content: center;
   // align-self: end;
   //justify-self: end;
