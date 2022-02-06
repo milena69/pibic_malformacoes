@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
-import { css } from "@emotion/css";
-import Container from "@mui/material/Container";
+import styled from '@emotion/styled';
+import { css } from '@emotion/css';
+import Container from '@mui/material/Container';
 
 export const Containers = styled(Container)`
   box-shadow: 0px 3px 10px #d6d6d6, 0px 0px 33px #d6d6d6, 0px 8px 400px #d6d6d6;
@@ -12,7 +12,7 @@ export const Containers = styled(Container)`
   margin: 5% auto;
   padding: 50px 0px;
 
-  /* background-color: ${({ theme: { colors } }) => colors.background}; */
+  background-color: ${({ theme: { colors } }) => colors.background};
 `;
 
 export const DivCenter = styled(Container)`

@@ -4,17 +4,14 @@ import {
   CircularProgress,
   FormControlLabel,
   Typography,
-} from "@mui/material";
-import { LoadingButton } from "@mui/lab";
-import SaveIcon from "@mui/icons-material/Save";
-import React, { useEffect, useState } from "react";
-import { useNavigate, Outlet } from "react-router-dom";
-import { useRequest, RequestActionTypes } from "../../utils/hooks";
-import { Buttons } from "../../components/button";
-import { Body } from "../../components/container";
-import { DivCenter } from "../../components/container/styled";
-import { Titulo } from "../../components/titulo";
-import questionario from "../../assets/questionario.json";
+} from '@mui/material';
+import { LoadingButton } from '@mui/lab';
+import SaveIcon from '@mui/icons-material/Save';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, Outlet } from 'react-router-dom';
+import { useRequest, RequestActionTypes } from '../../utils/hooks';
+import { Buttons, Body, Titulo, ProgressBar } from '../../components';
+import questionario from '../../assets/questionario.json';
 
 const Home = () => {
   //console.log(questionario);
@@ -35,7 +32,7 @@ const Home = () => {
       return {
         ...pergunta,
         respostas: newRepostas,
-        respondida: false,
+        checked: false,
       };
     });
     // console.log("depois", newArrayQuestionario);
@@ -90,14 +87,15 @@ const Home = () => {
     <>
       <Body>
         {!isLoading && (
-          <DivCenter dark="true">
+          <>
+            <ProgressBar progresso={40} animated={false} />
             <Titulo>{arrayQuestionario[step].pergunta}</Titulo>
             <div
               style={{
-                display: "flex",
-                flexDirection: "column",
-                marginTop: "25px",
-                alignItems: "justify",
+                display: 'flex',
+                flexDirection: 'column',
+                marginTop: '25px',
+                alignItems: 'justify',
               }}
             >
               {arrayQuestionario[step].respostas.map(({ resposta, id }) => {
@@ -120,20 +118,20 @@ const Home = () => {
             </div>
             <div
               style={{
-                justifyContent: "space-between",
-                display: "flex",
-                width: "100%",
-                marginTop: "50px",
+                justifyContent: 'space-between',
+                display: 'flex',
+                width: '100%',
+                marginTop: '50px',
               }}
             >
               <Buttons
-                titulo="Voltar"
-                voltar="true"
+                titulo='Voltar'
+                voltar='true'
                 onClick={() => setStep(step - 1)}
               />
-              <Buttons titulo="Próximo" onClick={() => setStep(step + 1)} />
+              <Buttons titulo='Próximo' onClick={() => setStep(step + 1)} />
             </div>
-          </DivCenter>
+          </>
         )}
       </Body>
     </>
