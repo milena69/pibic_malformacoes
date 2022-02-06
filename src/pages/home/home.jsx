@@ -2,6 +2,12 @@ import { Checkbox, FormControlLabel } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { Buttons, Body, Titulo, ProgressBar } from '../../components';
 import questionario from '../../assets/questionario.json';
+import {
+  ButtonWrapper,
+  DivRespostas,
+  ProgressWrapper,
+  SpanProgress,
+} from './styled';
 
 const Home = () => {
   const [isAnimated, setIsAnimated] = useState(false);
@@ -96,23 +102,17 @@ const Home = () => {
       <Body>
         {!isLoading && (
           <>
-            <ProgressBar
-              progresso={((step + 1) * 100) / arrayQuestionario.length}
-              animated={isAnimated}
-            />
-            <div>
-              {step + 1}/{arrayQuestionario.length}
-            </div>
-            <div style={{ marginTop: 30 }} />
+            <ProgressWrapper>
+              <ProgressBar
+                progresso={((step + 1) * 100) / arrayQuestionario.length}
+                animated={isAnimated}
+              />
+              <SpanProgress>
+                {step + 1}/{arrayQuestionario.length}
+              </SpanProgress>
+            </ProgressWrapper>
             <Titulo>{arrayQuestionario[step].pergunta}</Titulo>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                marginTop: '25px',
-                alignItems: 'justify',
-              }}
-            >
+            <DivRespostas>
               {arrayQuestionario[step].respostas.map(({ resposta, id }) => {
                 return (
                   <FormControlLabel
@@ -128,15 +128,8 @@ const Home = () => {
                   />
                 );
               })}
-            </div>
-            <div
-              style={{
-                justifyContent: 'space-between',
-                display: 'flex',
-                width: '100%',
-                marginTop: '50px',
-              }}
-            >
+            </DivRespostas>
+            <ButtonWrapper>
               <Buttons
                 titulo='Voltar'
                 voltar='true'
@@ -151,7 +144,7 @@ const Home = () => {
                   onClick: handleConcluir,
                 })}
               />
-            </div>
+            </ButtonWrapper>
           </>
         )}
       </Body>

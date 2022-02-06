@@ -6,6 +6,7 @@ export const Title = styled.h1`
   color: ${theme?.colors?.title};
   display: flex;
   text-align: center;
+  margin-top: 30px;
   //justify-content: center;
   // align-self: end;
   //justify-self: end;
