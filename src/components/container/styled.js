@@ -9,13 +9,20 @@ export const Containers = styled(Container)`
   min-width: 260px;
   display: flex;
   align-items: center;
-  margin: 5% auto;
   padding: 50px 20px;
-
+  justify-content: center;
+  align-items: center;
   background-color: ${({ theme: { colors } }) => colors.background};
   @media (max-width: 500px) {
     width: 90%;
   }
+`;
+
+export const BodyContent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 `;
 
 export const DivCenter = styled(Container)`
@@ -36,4 +43,6 @@ export const DivCenter = styled(Container)`
       margin: 5% auto;
       justify-content: center;
     `}
+  @media (max-width: 500px) {
+  }
 `;

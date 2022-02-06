@@ -14,7 +14,7 @@ const Home = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    console.log('antes', questionario.perguntas);
+    // console.log('antes', questionario.perguntas);
     let newArrayQuestionario = questionario.perguntas.map((pergunta) => {
       let newRepostas = pergunta.respostas.map((resposta) => ({
         ...resposta,
@@ -26,7 +26,7 @@ const Home = () => {
         respondida: false,
       };
     });
-    console.log('depois', newArrayQuestionario);
+    // console.log('depois', newArrayQuestionario);
     setArrayQuestionario(newArrayQuestionario);
     setIsLoading(false);
     // return () => {
@@ -67,6 +67,45 @@ const Home = () => {
     setTimeout(() => setIsAnimated(false), 1000);
   };
 
+  const handleCheckChange = ({ target: { checked } }, idResposta) => {
+    // console.log('id:', idResposta);
+    let questionario = arrayQuestionario;
+    let respostas = arrayQuestionario[step].respostas;
+    console.log('Reposta:', idResposta, '\nValor:', checked);
+    const index = respostas?.findIndex((x) => x.id === idResposta);
+
+    respostas = respostas?.map(({ id, resposta }) => {
+      return {
+        id,
+        resposta,
+        checked: false,
+      };
+    });
+    // console.log(questao);
+    respostas[index].checked = checked;
+    console.log(questionario);
+    questionario[step].respostas = respostas;
+    setArrayQuestionario([...questionario]);
+    console.log(arrayQuestionario);
+    // console.log('Questão:', step, '\nResposta:', index);
+    // data[index].respostas.map((resposta) =>(resposta.))
+    // checked = true;
+    // data[index].resposta_cadastrada = 'Sim';
+
+    // this.setState(data);
+    // console.log({ data: arrayQuestionario });
+  };
+
+  const onCheckChanged2 = (idQuestao) => {
+    const data = arrayQuestionario;
+
+    const index = data.findIndex((index) => index.id === idQuestao);
+    data[index].checked = false;
+
+    this.setState(data);
+    console.log({ data: arrayQuestionario });
+  };
+
   return (
     <>
       <Body>
@@ -96,8 +135,9 @@ const Home = () => {
                     control={
                       <Checkbox
                         id={id}
-                        checked={resposta.respondida}
-                        onChange={handleCheck}
+                        checked={resposta.checked}
+                        // onChange={handleCheck}
+                        onChange={(evento) => handleCheckChange(evento, id)}
                         //onClick={(e) => this.handleClick(this, id)}
                       />
                     }
