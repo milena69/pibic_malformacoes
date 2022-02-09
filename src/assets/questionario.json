@@ -1,0 +1,364 @@
+{
+    "perguntas": [
+        {
+            "id": "0",
+            "nome": "profissão",
+            "pergunta": "Qual a sua profissão?",
+            "multiplaEscolha": true,
+            "respostas": [
+                {
+                    "id": "0",
+                    "resposta": "enfermeiro(a)"
+                },
+                {
+                    "id": "1",
+                    "resposta": "médico(a)"
+                },
+                {
+                    "id": "2",
+                    "resposta": "técnico(a) de enfermagem"
+                },
+                {
+                    "id": "3",
+                    "resposta": "estudante da saúde"
+                },
+                {
+                    "id": "4",
+                    "resposta": "outro profissional da área de saúde"
+                },
+                {
+                    "id": "5",
+                    "resposta": "paciente"
+                }
+            ]
+        },
+        {
+            "id": "1",
+            "nome": "sexo",
+            "pergunta": "Qual o sexo do(a) paciente?",
+            "multiplaEscolha": false,
+            "respostas": [
+                {
+                    "id": "0",
+                    "resposta": "Feminino"
+                },
+                {
+                    "id": "1",
+                    "resposta": "Masculino"
+                },
+                {
+                    "id": "2",
+                    "resposta": "Indeterminado"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "nome": "idade",
+            "pergunta": "Qual a idade do(a) paciente?",
+            "multiplaEscolha": false,
+            "respostas": [
+                {
+                    "id": "0",
+                    "resposta": "0 a 5 meses"
+                },
+                {
+                    "id": "1",
+                    "resposta": "6 a 12 meses"
+                },
+                {
+                    "id": "2",
+                    "resposta": "1 a 2 anos"
+                },
+                {
+                    "id": "3",
+                    "resposta": "3 a 5 anos"
+                },
+                {
+                    "id": "4",
+                    "resposta": "6 a 10 anos"
+                },
+                {
+                    "id": "5",
+                    "resposta": "11 a 15 anos"
+                },
+                {
+                    "id": "6",
+                    "resposta": "16 a 20 anos"
+                },
+                {
+                    "id": "7",
+                    "resposta": "acima de 20 anos"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "nome": "peso",
+            "pergunta": "Sobre o peso:",
+            "multiplaEscolha": false,
+            "respostas": [
+                {
+                    "id": "0",
+                    "resposta": "dentro da normalidade"
+                },
+                {
+                    "id": "1",
+                    "resposta": "acima do peso"
+                },
+                {
+                    "id": "2",
+                    "resposta": "abaixo do peso"
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "nome": "altura",
+            "pergunta": "Sobre a altura:",
+            "multiplaEscolha": false,
+            "respostas": [
+                {
+                    "id": "0",
+                    "resposta": "dentro da normalidade"
+                },
+                {
+                    "id": "1",
+                    "resposta": "acima da normalidade"
+                },
+                {
+                    "id": "2",
+                    "resposta": "abaixo da normalidade"
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "nome": "desenvolvimento-cefalico",
+            "pergunta": "Observando o desenvolvimento cefálico, é possível constatar indícios de:",
+            "multiplaEscolha": false,
+            "respostas": [
+                {
+                    "id": "0",
+                    "resposta": "desenvolvimento dentro da normalidade"
+                },
+                {
+                    "id": "1",
+                    "resposta": "macrocefalia"
+                },
+                {
+                    "id": "2",
+                    "resposta": "microcefalia"
+                },
+                {
+                    "id": "3",
+                    "resposta": "braquicefalia"
+                }
+            ]
+        },
+        {
+            "id": "6",
+            "nome": "Formação Ocular",
+            "pergunta": "Sobre a formação ocular, é possível observar:",
+            "multiplaEscolha": false,
+            "respostas": [
+                {
+                    "id": "0",
+                    "resposta": "presença de de fendas palpebrais"
+                },
+                {
+                    "id": "1",
+                    "resposta": "presença de pregas epicântricas"
+                },
+                {
+                    "id": "2",
+                    "resposta": "ptose palpebral"
+                },
+                {
+                    "id": "3",
+                    "resposta": "não há presença de anormalidade"
+                },
+                {
+                    "id": "4",
+                    "resposta": "estrabismo"
+                },
+                {
+                    "id": "5",
+                    "resposta": "catarata"
+                }
+            ]
+        },
+        {
+            "id": "7",
+            "nome": "Comprimento dos membros",
+            "pergunta": "O comprimento dos membros inferiores (pernas) está:",
+            "multiplaEscolha": false,
+            "respostas": [
+                {
+                    "id": "0",
+                    "resposta": "dentro da normalidade"
+                },
+                {
+                    "id": "1",
+                    "resposta": "acima da normalidade"
+                },
+                {
+                    "id": "2",
+                    "resposta": "abaixo da normalidade"
+                }
+            ]
+        },
+        {
+            "id": "8",
+            "nome": "Comprimento dos membros",
+            "pergunta": "O comprimento dos membros superiores (braços e antebraços) está:",
+            "multiplaEscolha": false,
+            "respostas": [
+                {
+                    "id": "0",
+                    "resposta": "dentro da normalidade"
+                },
+                {
+                    "id": "1",
+                    "resposta": "acima da normalidade"
+                },
+                {
+                    "id": "2",
+                    "resposta": "abaixo da normalidade"
+                }
+            ]
+        },
+        {
+            "id": "9",
+            "nome": "Desenvolvimento do pescoço",
+            "pergunta": "Observando o desenvolvimento do pescoço:",
+            "multiplaEscolha": false,
+            "respostas": [
+                {
+                    "id": "0",
+                    "resposta": "pescoço alado"
+                },
+                {
+                    "id": "1",
+                    "resposta": "mais curto que o regular"
+                },
+                {
+                    "id": "2",
+                    "resposta": "mais grosso que o regular"
+                },
+                {
+                    "id": "3",
+                    "resposta": "dentro da regularidade"
+                }
+            ]
+        },
+        {
+            "id": "10",
+            "nome": "Formação das mãos",
+            "pergunta": "Sobre a formação das mãos, é possível observar que:",
+            "multiplaEscolha": false,
+            "respostas": [
+                {
+                    "id": "0",
+                    "resposta": "há polidactilia"
+                },
+                {
+                    "id": "1",
+                    "resposta": "braquidaquitilia"
+                },
+                {
+                    "id": "2",
+                    "resposta": "palma mais achatadas"
+                },
+                {
+                    "id": "3",
+                    "resposta": "palma menor que o regular"
+                },
+                {
+                    "id": "4",
+                    "resposta": "prega palmar"
+                },
+                {
+                    "id": "5",
+                    "resposta": "há clinodactilia"
+                },
+                {
+                    "id": "6",
+                    "resposta": "sindactilia"
+                },
+                {
+                    "id": "7",
+                    "resposta": "hipoplasia da falange"
+                },
+                {
+                    "id": "8",
+                    "resposta": "dentro da regularidade"
+                },
+                {
+                    "id": "9",
+                    "resposta": "hiperflexibilidade articular"
+                },
+                {
+                    "id": "10",
+                    "resposta": "presença de edema"
+                },
+                {
+                    "id": "11",
+                    "resposta": "não há indícios de anormalidade"
+                }
+            ]
+        },
+        {
+            "id": "11",
+            "nome": "Formação dos pés",
+            "pergunta": "Sobre a formação dos pés, é possível observar que:",
+            "multiplaEscolha": false,
+            "respostas": [
+                {
+                    "id": "0",
+                    "resposta": "polidactilia"
+                },
+                {
+                    "id": "1",
+                    "resposta": "clinodactilia"
+                },
+                {
+                    "id": "2",
+                    "resposta": "braquidaquitilia"
+                },
+                {
+                    "id": "3",
+                    "resposta": "sindactilia"
+                },
+                {
+                    "id": "4",
+                    "resposta": "região plantar convexa"
+                },
+                {
+                    "id": "5",
+                    "resposta": "achatadas"
+                },
+                {
+                    "id": "6",
+                    "resposta": "pé torto congênito"
+                },
+                {
+                    "id": "7",
+                    "resposta": "menor que o regular"
+                },
+                {
+                    "id": "8",
+                    "resposta": "hiperflexibilidade articular"
+                },
+                {
+                    "id": "9",
+                    "resposta": "presença de edema"
+                },
+                {
+                    "id": "10",
+                    "resposta": "não há indícios de anormalidade"
+                }
+            ]
+        }
+    ]
+}
