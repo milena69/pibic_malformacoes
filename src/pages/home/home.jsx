@@ -1,20 +1,29 @@
-import { Checkbox, FormControlLabel } from '@mui/material';
-import React, { useEffect, useState } from 'react';
-import { Buttons, Body, Titulo, ProgressBar } from '../../components';
-import questionario from '../../assets/questionario.json';
+import { Checkbox, FormControlLabel } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import {
+  Buttons,
+  Body,
+  Titulo,
+  ProgressBar,
+  AlertaToastError,
+} from "../../components";
+import questionario from "../../assets/questionario.json";
 import {
   ButtonWrapper,
   DivRespostas,
   ProgressWrapper,
   SpanProgress,
-} from './styled';
-
+} from "./styled";
+import { useAlert } from "react-alert";
+import { types } from "react-alert";
+import { positions } from "react-alert";
 const Home = () => {
   const [isAnimated, setIsAnimated] = useState(false);
   const [step, setStep] = useState(0);
   const [isLoading, setIsLoading] = useState(!!questionario);
   const [arrayQuestionario, setArrayQuestionario] = useState([]);
   const [respostasQuestao, setRespostasQuestao] = useState([]);
+  const alert = useAlert();
 
   useEffect(() => {
     setIsLoading(true);
@@ -35,7 +44,7 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    console.log('Questionário:', arrayQuestionario);
+    console.log("Questionário:", arrayQuestionario);
   }, [arrayQuestionario]);
 
   const handleAvancar = () => {
@@ -52,7 +61,13 @@ const Home = () => {
       setStep(newStep);
       setTimeout(() => setIsAnimated(false), 1000);
     } else {
-      window.alert('preenche direito');
+      alert.show("Preencha uma resposta", {
+        //position: positions.MIDDLE_RIGHT,
+      });
+      // alert.show(<AlertaToastError>Oh look, an alert!</AlertaToastError>, {
+      //   type: types.ERROR,
+      // });
+      //  window.alert("preenche direito");
     }
   };
 
@@ -63,7 +78,7 @@ const Home = () => {
     setTimeout(() => setIsAnimated(false), 1000);
   };
 
-  console.log('Olha as respostas', respostasQuestao);
+  console.log("Olha as respostas", respostasQuestao);
 
   const handleCheckChange = ({ target: { checked } }, idResposta) => {
     const index = respostasQuestao?.findIndex((x) => x.id === idResposta);
@@ -94,7 +109,8 @@ const Home = () => {
   };
 
   const handleConcluir = () => {
-    window.alert('acabouuu, que festa!');
+    //respostaQuestao.some(resposta => resposta.checked)
+    window.alert("acabouuu, que festa!");
   };
 
   return (
@@ -131,16 +147,16 @@ const Home = () => {
             </DivRespostas>
             <ButtonWrapper>
               <Buttons
-                titulo='Voltar'
-                voltar='true'
+                titulo="Voltar"
+                voltar="true"
                 onClick={handleVoltar}
                 disabled={step < 1}
               />
               <Buttons
-                titulo='Próximo'
+                titulo="Próximo"
                 onClick={handleAvancar}
                 {...(step + 1 === arrayQuestionario.length && {
-                  titulo: 'Concluir',
+                  titulo: "Concluir",
                   onClick: handleConcluir,
                 })}
               />

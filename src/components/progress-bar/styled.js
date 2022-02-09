@@ -9,3 +9,10 @@ export const BarraDeProgresso = styled.div.attrs(({ animated }) => ({
   background-color: ${({ theme: { colors } }) => colors.primary};
   width: ${({ progresso }) => progresso}%;
 `;
+
+export const DivProgress = styled.div.attrs({
+  className: 'progress'
+})`
+  width: 100%; 
+`
+

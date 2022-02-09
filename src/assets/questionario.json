@@ -40,15 +40,15 @@
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "F"
+                    "resposta": "Feminino"
                 },
                 {
                     "id": "1",
-                    "resposta": "M"
+                    "resposta": "Masculino"
                 },
                 {
                     "id": "2",
-                    "resposta": "N"
+                    "resposta": "Indeterminado"
                 }
             ]
         },
@@ -249,6 +249,114 @@
                 {
                     "id": "3",
                     "resposta": "dentro da regularidade"
+                }
+            ]
+        },
+        {
+            "id": "10",
+            "nome": "Formação das mãos",
+            "pergunta": "Sobre a formação das mãos, é possível observar que:",
+            "multiplaEscolha": false,
+            "respostas": [
+                {
+                    "id": "0",
+                    "resposta": "há polidactilia"
+                },
+                {
+                    "id": "1",
+                    "resposta": "braquidaquitilia"
+                },
+                {
+                    "id": "2",
+                    "resposta": "palma mais achatadas"
+                },
+                {
+                    "id": "3",
+                    "resposta": "palma menor que o regular"
+                },
+                {
+                    "id": "4",
+                    "resposta": "prega palmar"
+                },
+                {
+                    "id": "5",
+                    "resposta": "há clinodactilia"
+                },
+                {
+                    "id": "6",
+                    "resposta": "sindactilia"
+                },
+                {
+                    "id": "7",
+                    "resposta": "hipoplasia da falange"
+                },
+                {
+                    "id": "8",
+                    "resposta": "dentro da regularidade"
+                },
+                {
+                    "id": "9",
+                    "resposta": "hiperflexibilidade articular"
+                },
+                {
+                    "id": "10",
+                    "resposta": "presença de edema"
+                },
+                {
+                    "id": "11",
+                    "resposta": "não há indícios de anormalidade"
+                }
+            ]
+        },
+        {
+            "id": "11",
+            "nome": "Formação dos pés",
+            "pergunta": "Sobre a formação dos pés, é possível observar que:",
+            "multiplaEscolha": false,
+            "respostas": [
+                {
+                    "id": "0",
+                    "resposta": "polidactilia"
+                },
+                {
+                    "id": "1",
+                    "resposta": "clinodactilia"
+                },
+                {
+                    "id": "2",
+                    "resposta": "braquidaquitilia"
+                },
+                {
+                    "id": "3",
+                    "resposta": "sindactilia"
+                },
+                {
+                    "id": "4",
+                    "resposta": "região plantar convexa"
+                },
+                {
+                    "id": "5",
+                    "resposta": "achatadas"
+                },
+                {
+                    "id": "6",
+                    "resposta": "pé torto congênito"
+                },
+                {
+                    "id": "7",
+                    "resposta": "menor que o regular"
+                },
+                {
+                    "id": "8",
+                    "resposta": "hiperflexibilidade articular"
+                },
+                {
+                    "id": "9",
+                    "resposta": "presença de edema"
+                },
+                {
+                    "id": "10",
+                    "resposta": "não há indícios de anormalidade"
                 }
             ]
         }
