@@ -1,3 +1,3 @@
-import Dashboard from './dashboard';
-import Home from './home';
+import Dashboard from './dashboard/dashboard';
+import Home from './home/home';
 export { Dashboard, Home };

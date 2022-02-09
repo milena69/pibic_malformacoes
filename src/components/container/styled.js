@@ -1,18 +1,28 @@
-import styled from "@emotion/styled";
-import { css } from "@emotion/css";
-import Container from "@mui/material/Container";
+import styled from '@emotion/styled';
+import { css } from '@emotion/css';
+import Container from '@mui/material/Container';
 
 export const Containers = styled(Container)`
   box-shadow: 0px 3px 10px #d6d6d6, 0px 0px 33px #d6d6d6, 0px 8px 400px #d6d6d6;
-  height: 100%;
   border-radius: 1rem;
-  width: 50%;
+  width: 50vw;
+  min-width: 260px;
   display: flex;
   align-items: center;
-  margin: 5% auto;
-  padding: 50px 0px;
+  padding: 50px 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: ${({ theme: { colors } }) => colors.background};
+  @media (max-width: 500px) {
+    width: 90%;
+  }
+`;
 
-  /* background-color: ${({ theme: { colors } }) => colors.background}; */
+export const BodyContent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 `;
 
 export const DivCenter = styled(Container)`
@@ -33,4 +43,6 @@ export const DivCenter = styled(Container)`
       margin: 5% auto;
       justify-content: center;
     `}
+  @media (max-width: 500px) {
+  }
 `;
