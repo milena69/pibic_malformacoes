@@ -27,17 +27,39 @@ const Home = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    let newArrayQuestionario = questionario.perguntas.map((pergunta) => {
-      let newRepostas = pergunta.respostas.map((resposta) => ({
-        ...resposta,
-        checked: false,
-      }));
-      return {
-        ...pergunta,
-        respostas: newRepostas,
-        respondida: false,
-      };
-    });
+    let newArrayQuestionario;
+    let respostaChecked = questionario.perguntas[step].respostas.some(
+      (resposta) => resposta?.checked
+    );
+    // let newRepostas = pergunta.respostas.some((resposta => resposta?.checked))
+    if (!respostaChecked) {
+      newArrayQuestionario = questionario.perguntas.map((pergunta) => {
+        let newRepostas = pergunta.respostas.map((resposta) => ({
+          ...resposta,
+          checked: false,
+        }));
+        return {
+          ...pergunta,
+          respostas: newRepostas,
+          respondida: false,
+        };
+      });
+      console.log("respostaChecked if", respostaChecked);
+    } else {
+      console.log("respostaChecked else", respostaChecked);
+    }
+
+    // let newArrayQuestionario = questionario.perguntas.map((pergunta) => {
+    //   let newRepostas = pergunta.respostas.map((resposta) => ({
+    //     ...resposta,
+    //      checked: false,
+    //   }));
+    //   return {
+    //     ...pergunta,
+    //     respostas: newRepostas,
+    //     respondida: false,
+    //   };
+    // });
     setArrayQuestionario(newArrayQuestionario);
     setRespostasQuestao(newArrayQuestionario[step].respostas);
     setIsLoading(false);
@@ -123,9 +145,9 @@ const Home = () => {
                 progresso={((step + 1) * 100) / arrayQuestionario.length}
                 animated={isAnimated}
               />
-              <SpanProgress>
+              {/* <SpanProgress>
                 {step + 1}/{arrayQuestionario.length}
-              </SpanProgress>
+              </SpanProgress> */}
             </ProgressWrapper>
             <Titulo>{arrayQuestionario[step].pergunta}</Titulo>
             <DivRespostas>
