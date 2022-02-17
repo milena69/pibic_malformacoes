@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Dashboard, Home } from "./pages";
+import Agradecimento from "./pages/agradecimento/agradecimento";
 
 const Navegacao = () => {
   return (
@@ -14,7 +15,7 @@ const Navegacao = () => {
       {/* Posso ter rodas iguais com parâmetros diferentes */}
       <Route path="dashboard" element={<Dashboard />} />
       <Route path="dashboard/:id" element={<Dashboard />} />
-
+      <Route path="agradecimento" element={<Agradecimento />} />
       <Route path="*" element={<h1>Página não existe</h1>} />
     </Routes>
   );
