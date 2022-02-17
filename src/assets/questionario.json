@@ -5,30 +5,37 @@
             "nome": "profissão",
             "pergunta": "Qual a sua profissão?",
             "multiplaEscolha": false,
+            "respondida": false,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "enfermeiro(a)"
+                    "resposta": "enfermeiro(a)",
+                    "checked": false
                 },
                 {
                     "id": "1",
-                    "resposta": "médico(a)"
+                    "resposta": "médico(a)",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "técnico(a) de enfermagem"
+                    "resposta": "técnico(a) de enfermagem",
+                    "checked": false
                 },
                 {
                     "id": "3",
-                    "resposta": "estudante da saúde"
+                    "resposta": "estudante da saúde",
+                    "checked": false
                 },
                 {
                     "id": "4",
-                    "resposta": "outro profissional da área de saúde"
+                    "resposta": "outro profissional da área de saúde",
+                    "checked": false
                 },
                 {
                     "id": "5",
-                    "resposta": "paciente"
+                    "resposta": "paciente",
+                    "checked": false
                 }
             ]
         },
@@ -37,18 +44,22 @@
             "nome": "sexo",
             "pergunta": "Qual o sexo do(a) paciente?",
             "multiplaEscolha": false,
+            "respondida": false,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "Feminino"
+                    "resposta": "Feminino",
+                    "checked": false
                 },
                 {
                     "id": "1",
-                    "resposta": "Masculino"
+                    "resposta": "Masculino",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "Indeterminado"
+                    "resposta": "Indeterminado",
+                    "checked": false
                 }
             ]
         },
@@ -57,80 +68,95 @@
             "nome": "idade",
             "pergunta": "Qual a idade do(a) paciente?",
             "multiplaEscolha": false,
+            "respondida": false,
             "respostas": [
                 {
                     "id": "0",
                     "resposta": "0 a 5 meses",
-                    "checked": true,
-                    "respondida": true
+                    "checked": false
                 },
                 {
                     "id": "1",
-                    "resposta": "6 a 12 meses"
+                    "resposta": "6 a 12 meses",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "1 a 2 anos"
+                    "resposta": "1 a 2 anos",
+                    "checked": false
                 },
                 {
                     "id": "3",
-                    "resposta": "3 a 5 anos"
+                    "resposta": "3 a 5 anos",
+                    "checked": false
                 },
                 {
                     "id": "4",
-                    "resposta": "6 a 10 anos"
+                    "resposta": "6 a 10 anos",
+                    "checked": false
                 },
                 {
                     "id": "5",
-                    "resposta": "11 a 15 anos"
+                    "resposta": "11 a 15 anos",
+                    "checked": false
                 },
                 {
                     "id": "6",
-                    "resposta": "16 a 20 anos"
+                    "resposta": "16 a 20 anos",
+                    "checked": false
                 },
                 {
                     "id": "7",
-                    "resposta": "acima de 20 anos"
+                    "resposta": "acima de 20 anos",
+                    "checked": false
                 }
             ]
         },
         {
             "id": "3",
             "nome": "peso",
-            "pergunta": "Sobre o peso:",
+            "pergunta": "O peso encontra-se:",
             "multiplaEscolha": false,
+            "respondida": true,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "dentro do esperado"
+                    "resposta": "dentro do esperado",
+                    "checked": true
                 },
                 {
                     "id": "1",
-                    "resposta": "acima do esperado"
+                    "resposta": "acima do esperado",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "abaixo do esperado"
+                    "resposta": "abaixo do esperado",
+                    "checked": false
                 }
             ]
         },
         {
             "id": "4",
             "nome": "altura",
-            "pergunta": "Sobre a altura:",
+            "pergunta": "A altura encontra-se:",
             "multiplaEscolha": false,
+            "respondida": true,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "dentro do esperado"
+                    "resposta": "dentro do esperado",
+                    "checked": true
                 },
                 {
                     "id": "1",
-                    "resposta": "acima do esperado"
+                    "resposta": "acima do esperado",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "abaixo do esperado"
+                    "resposta": "abaixo do esperado",
+                    "checked": false
                 }
             ]
         },
@@ -139,22 +165,27 @@
             "nome": "desenvolvimento-cefalico",
             "pergunta": "Observando o desenvolvimento cefálico, é possível constatar indícios de:",
             "multiplaEscolha": false,
+            "respondida": true,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "não há indícios de má-formação"
+                    "resposta": "não há indícios de malformação",
+                    "checked": true
                 },
                 {
                     "id": "1",
-                    "resposta": "macrocefalia"
+                    "resposta": "macrocefalia",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "microcefalia"
+                    "resposta": "microcefalia",
+                    "checked": false
                 },
                 {
                     "id": "3",
-                    "resposta": "braquicefalia"
+                    "resposta": "braquicefalia",
+                    "checked": false
                 }
             ]
         },
@@ -163,86 +194,105 @@
             "nome": "Formação Ocular",
             "pergunta": "Sobre a formação ocular, é possível observar:",
             "multiplaEscolha": true,
+            "respondida": true,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "não há má-formação aparente"
+                    "resposta": "não há malformação aparente",
+                    "checked": true
                 },
                 {
                     "id": "1",
-                    "resposta": "fendas palpebrais"
+                    "resposta": "fendas palpebrais",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "pregas epicântricas"
+                    "resposta": "pregas epicântricas",
+                    "checked": false
                 },
                 {
                     "id": "3",
-                    "resposta": "ptose palpebral"
+                    "resposta": "ptose palpebral",
+                    "checked": false
                 },
                 {
                     "id": "4",
-                    "resposta": "estrabismo"
+                    "resposta": "estrabismo",
+                    "checked": false
                 },
                 {
                     "id": "5",
-                    "resposta": "catarata"
+                    "resposta": "catarata",
+                    "checked": false
                 },
                 {
                     "id": "6",
-                    "resposta": "fissura palpebral oblíqua"
+                    "resposta": "fissura palpebral oblíqua",
+                    "checked": false
                 },
                 {
                     "id": "7",
-                    "resposta": "luxação do cristalino"
+                    "resposta": "luxação do cristalino",
+                    "checked": false
                 },
                 {
                     "id": "8",
-                    "resposta": "glaucoma"
+                    "resposta": "glaucoma",
+                    "checked": false
                 },
                 {
                     "id": "9",
-                    "resposta": "desprendimento de retina"
+                    "resposta": "desprendimento de retina",
+                    "checked": false
                 }
             ]
         },
         {
             "id": "7",
             "nome": "Comprimento dos membros inferiores",
-            "pergunta": "O comprimento dos membros inferiores (pernas) está:",
+            "pergunta": "O comprimento dos membros inferiores (pernas) encontra-se:",
             "multiplaEscolha": false,
+            "respondida": true,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "dentro do esperado"
+                    "resposta": "dentro do esperado",
+                    "checked": true
                 },
                 {
                     "id": "1",
-                    "resposta": "acima do esperado"
+                    "resposta": "acima do esperado",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "abaixo do esperado"
+                    "resposta": "abaixo do esperado",
+                    "checked": false
                 }
             ]
         },
         {
             "id": "8",
             "nome": "Comprimento dos membros superiores",
-            "pergunta": "O comprimento dos membros superiores (braços e antebraços) está:",
+            "pergunta": "O comprimento dos membros superiores (braços e antebraços) encontra-se:",
             "multiplaEscolha": false,
+            "respondida": true,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "dentro do esperado"
+                    "resposta": "dentro do esperado",
+                    "checked": true
                 },
                 {
                     "id": "1",
-                    "resposta": "acima do esperado"
+                    "resposta": "acima do esperado",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "abaixo do esperado"
+                    "resposta": "abaixo do esperado",
+                    "checked": false
                 }
             ]
         },
@@ -251,26 +301,32 @@
             "nome": "Desenvolvimento do pescoço",
             "pergunta": "Observando o desenvolvimento do pescoço:",
             "multiplaEscolha": true,
+            "respondida": true,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "dentro do esperado"
+                    "resposta": "dentro do esperado",
+                    "checked": true
                 },
                 {
                     "id": "1",
-                    "resposta": "alado"
+                    "resposta": "alado",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "mais curto que o esperado"
+                    "resposta": "mais curto que o esperado",
+                    "checked": false
                 },
                 {
                     "id": "3",
-                    "resposta": "mais grosso que o esperado"
+                    "resposta": "mais grosso que o esperado",
+                    "checked": false
                 },
                 {
                     "id": "4",
-                    "resposta": "dentro da regularidade"
+                    "resposta": "dentro da regularidade",
+                    "checked": false
                 }
             ]
         },
@@ -279,22 +335,27 @@
             "nome": "Desenvolvimento da coluna",
             "pergunta": "É possível observar alguma das seguintes alterações de coluna?",
             "multiplaEscolha": true,
+            "respondida": true,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "não há má-formação aparente"
+                    "resposta": "não há malformação aparente",
+                    "checked": true
                 },
                 {
                     "id": "1",
-                    "resposta": "escoliose"
+                    "resposta": "escoliose",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "cifose"
+                    "resposta": "cifose",
+                    "checked": false
                 },
                 {
                     "id": "3",
-                    "resposta": "lordose"
+                    "resposta": "lordose",
+                    "checked": false
                 }
             ]
         },
@@ -303,46 +364,57 @@
             "nome": "Formação das mãos",
             "pergunta": "Sobre a formação das mãos, é possível observar a presença de:",
             "multiplaEscolha": true,
+            "respondida": true,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "não há má-formação aparente"
+                    "resposta": "não há malformação aparente",
+                    "checked": true
                 },
                 {
                     "id": "1",
-                    "resposta": "polidactilia"
+                    "resposta": "polidactilia",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "braquidaquitilia"
+                    "resposta": "braquidaquitilia",
+                    "checked": false
                 },
                 {
                     "id": "3",
-                    "resposta": "clinodactilia"
+                    "resposta": "clinodactilia",
+                    "checked": false
                 },
                 {
                     "id": "4",
-                    "resposta": "sindactilia"
+                    "resposta": "sindactilia",
+                    "checked": false
                 },
                 {
                     "id": "5",
-                    "resposta": "palma mais achatadas"
+                    "resposta": "palma mais achatadas",
+                    "checked": false
                 },
                 {
                     "id": "6",
-                    "resposta": "palmas menores que o esperado"
+                    "resposta": "palmas menores que o esperado",
+                    "checked": false
                 },
                 {
                     "id": "7",
-                    "resposta": "prega palmar"
+                    "resposta": "prega palmar",
+                    "checked": false
                 },
                 {
                     "id": "8",
-                    "resposta": "hipoplasia da falange"
+                    "resposta": "hipoplasia da falange",
+                    "checked": false
                 },
                 {
                     "id": "9",
-                    "resposta": "edema"
+                    "resposta": "edema",
+                    "checked": false
                 }
             ]
         },
@@ -351,46 +423,57 @@
             "nome": "Formação dos pés",
             "pergunta": "Sobre a formação dos pés, é possível observar a presença de:",
             "multiplaEscolha": true,
+            "respondida": true,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "não há má-formação aparente"
+                    "resposta": "não há malformação aparente",
+                    "checked": true
                 },
                 {
                     "id": "1",
-                    "resposta": "polidactilia"
+                    "resposta": "polidactilia",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "clinodactilia"
+                    "resposta": "clinodactilia",
+                    "checked": false
                 },
                 {
                     "id": "3",
-                    "resposta": "braquidaquitilia"
+                    "resposta": "braquidaquitilia",
+                    "checked": false
                 },
                 {
                     "id": "4",
-                    "resposta": "sindactilia"
+                    "resposta": "sindactilia",
+                    "checked": false
                 },
                 {
                     "id": "5",
-                    "resposta": "região plantar convexa"
+                    "resposta": "região plantar convexa",
+                    "checked": false
                 },
                 {
                     "id": "6",
-                    "resposta": "pé achatadas"
+                    "resposta": "pé achatadas",
+                    "checked": false
                 },
                 {
                     "id": "7",
-                    "resposta": "pé torto congênito"
+                    "resposta": "pé torto congênito",
+                    "checked": false
                 },
                 {
                     "id": "8",
-                    "resposta": "menor que o esperado"
+                    "resposta": "menor que o esperado",
+                    "checked": false
                 },
                 {
                     "id": "9",
-                    "resposta": "edema"
+                    "resposta": "edema",
+                    "checked": false
                 }
             ]
         },
@@ -399,46 +482,57 @@
             "nome": "Formação dos lábio",
             "pergunta": "Sobre a formação do lábio e do palato, é possível observar:",
             "multiplaEscolha": true,
+            "respondida": true,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "não há má-formação aparente"
+                    "resposta": "não há malformação aparente",
+                    "checked": true
                 },
                 {
                     "id": "1",
-                    "resposta": "fenda palatina"
+                    "resposta": "fenda palatina",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "fenda labial"
+                    "resposta": "fenda labial",
+                    "checked": false
                 },
                 {
                     "id": "3",
-                    "resposta": "lábio leporino"
+                    "resposta": "lábio leporino",
+                    "checked": false
                 },
                 {
                     "id": "4",
-                    "resposta": "lábio superior fino"
+                    "resposta": "lábio superior fino",
+                    "checked": false
                 },
                 {
                     "id": "5",
-                    "resposta": "lábio inferior fino"
+                    "resposta": "lábio inferior fino",
+                    "checked": false
                 },
                 {
                     "id": "6",
-                    "resposta": "freio labial mais curto"
+                    "resposta": "freio labial mais curto",
+                    "checked": false
                 },
                 {
                     "id": "7",
-                    "resposta": "palato estreito"
+                    "resposta": "palato estreito",
+                    "checked": false
                 },
                 {
                     "id": "8",
-                    "resposta": "palato arcado"
+                    "resposta": "palato arcado",
+                    "checked": false
                 },
                 {
                     "id": "9",
-                    "resposta": "palato alto"
+                    "resposta": "palato alto",
+                    "checked": false
                 }
             ]
         },
@@ -447,26 +541,32 @@
             "nome": "desenvolvimento do tônus muscular",
             "pergunta": "Sobre o desenvolvimento do tônus muscular é possível observar a presença de:",
             "multiplaEscolha": true,
+            "respondida": true,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "não há má-formação aparente"
+                    "resposta": "não há malformação aparente",
+                    "checked": true
                 },
                 {
                     "id": "1",
-                    "resposta": "Hipotonia"
+                    "resposta": "Hipotonia",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "Hipertonia"
+                    "resposta": "Hipertonia",
+                    "checked": false
                 },
                 {
                     "id": "3",
-                    "resposta": "Ataxia"
+                    "resposta": "Ataxia",
+                    "checked": false
                 },
                 {
                     "id": "4",
-                    "resposta": "Distonia"
+                    "resposta": "Distonia",
+                    "checked": false
                 }
             ]
         },
@@ -475,22 +575,27 @@
             "nome": "características da língua",
             "pergunta": "Observando as características da língua, é possível constatar que ela apresenta:",
             "multiplaEscolha": true,
+            "respondida": true,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "dentro do esperado"
+                    "resposta": "dentro do esperado",
+                    "checked": true
                 },
                 {
                     "id": "1",
-                    "resposta": "protusão"
+                    "resposta": "protusão",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "fissuras"
+                    "resposta": "fissuras",
+                    "checked": false
                 },
                 {
                     "id": "3",
-                    "resposta": "freio lingual mais curto"
+                    "resposta": "freio lingual mais curto",
+                    "checked": false
                 }
             ]
         },
@@ -499,22 +604,27 @@
             "nome": "características da língua",
             "pergunta": "Observando as características da língua, é possível constatar que ela apresenta:",
             "multiplaEscolha": true,
+            "respondida": true,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "não há má-formação aparente"
+                    "resposta": "não há malformação aparente",
+                    "checked": true
                 },
                 {
                     "id": "1",
-                    "resposta": "ginecomastia"
+                    "resposta": "ginecomastia",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "tórax escavatun"
+                    "resposta": "tórax escavatun",
+                    "checked": false
                 },
                 {
                     "id": "3",
-                    "resposta": "tórax 'nadador'"
+                    "resposta": "tórax 'nadador'",
+                    "checked": false
                 }
             ]
         },
@@ -523,42 +633,52 @@
             "nome": "formação dos órgãos reprodutores",
             "pergunta": "Sobre a formação dos órgãos reprodutores, é possível observar:",
             "multiplaEscolha": true,
+            "respondida": true,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "não há má-formação aparente"
+                    "resposta": "não há malformação aparente",
+                    "checked": true
                 },
                 {
                     "id": "1",
-                    "resposta": "hermafroditismo"
+                    "resposta": "hermafroditismo",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "alteração de gônodas"
+                    "resposta": "alteração de gônodas",
+                    "checked": false
                 },
                 {
                     "id": "3",
-                    "resposta": "alteração na formação dos testículos"
+                    "resposta": "alteração na formação dos testículos",
+                    "checked": false
                 },
                 {
                     "id": "4",
-                    "resposta": "alteração na formação de útero"
+                    "resposta": "alteração na formação de útero",
+                    "checked": false
                 },
                 {
                     "id": "5",
-                    "resposta": "alteração na formação dos ovários"
+                    "resposta": "alteração na formação dos ovários",
+                    "checked": false
                 },
                 {
                     "id": "6",
-                    "resposta": "displasia pélvica"
+                    "resposta": "displasia pélvica",
+                    "checked": false
                 },
                 {
                     "id": "7",
-                    "resposta": "amenorreia"
+                    "resposta": "amenorreia",
+                    "checked": false
                 },
                 {
                     "id": "8",
-                    "resposta": "inconclusivo"
+                    "resposta": "inconclusivo",
+                    "checked": false
                 }
             ]
         },
@@ -567,18 +687,22 @@
             "nome": "formação do nariz",
             "pergunta": "Sobre a formação do nariz, é possível observar:",
             "multiplaEscolha": true,
+            "respondida": true,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "não há má-formação aparente"
+                    "resposta": "não há malformação aparente",
+                    "checked": true
                 },
                 {
                     "id": "1",
-                    "resposta": "nariz com ausência de septo"
+                    "resposta": "nariz com ausência de septo",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "nariz aplastada"
+                    "resposta": "nariz aplastada",
+                    "checked": false
                 }
             ]
         },
@@ -587,18 +711,22 @@
             "nome": "formação das orelhas",
             "pergunta": "Sobre a formação das orelhas, é possível observar:",
             "multiplaEscolha": true,
+            "respondida": true,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "não há má-formação aparente"
+                    "resposta": "não há malformação aparente",
+                    "checked": true
                 },
                 {
                     "id": "1",
-                    "resposta": "implantação baixa"
+                    "resposta": "implantação baixa",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "orelhas proeminentes"
+                    "resposta": "orelhas proeminentes",
+                    "checked": false
                 }
             ]
         },
@@ -607,18 +735,22 @@
             "nome": "atraso neuropsicomotor",
             "pergunta": "Paciente apresenta atraso neuropsicomotor?",
             "multiplaEscolha": false,
+            "respondida": true,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "Paciente apresenta histórico cardiopático?"
+                    "resposta": "Paciente apresenta histórico cardiopático?",
+                    "checked": true
                 },
                 {
                     "id": "1",
-                    "resposta": "implantação baixa"
+                    "resposta": "implantação baixa",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "orelhas proeminentes"
+                    "resposta": "orelhas proeminentes",
+                    "checked": false
                 }
             ]
         },
@@ -627,18 +759,22 @@
             "nome": "idade da mãe",
             "pergunta": "A idade da mãe do(a) paciente durante a gestação é acima de 35 anos?",
             "multiplaEscolha": false,
+            "respondida": false,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "Sim"
+                    "resposta": "Sim",
+                    "checked": false
                 },
                 {
                     "id": "1",
-                    "resposta": "Não"
+                    "resposta": "Não",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "Não sei"
+                    "resposta": "Não sei",
+                    "checked": false
                 }
             ]
         },
@@ -647,18 +783,22 @@
             "nome": "formação das orelhas",
             "pergunta": "A idade do pai do(a) paciente durante a concepção era acima de 40 anos?",
             "multiplaEscolha": false,
+            "respondida": false,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "Sim"
+                    "resposta": "Sim",
+                    "checked": false
                 },
                 {
                     "id": "1",
-                    "resposta": "Não"
+                    "resposta": "Não",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "Não sei"
+                    "resposta": "Não sei",
+                    "checked": false
                 }
             ]
         },
@@ -667,18 +807,22 @@
             "nome": "atraso na aquisição",
             "pergunta": "Paciente apresenta atraso na aquisição de linguagem falada ou escrita?",
             "multiplaEscolha": false,
+            "respondida": false,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "Sim"
+                    "resposta": "Sim",
+                    "checked": false
                 },
                 {
                     "id": "1",
-                    "resposta": "Não"
+                    "resposta": "Não",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "Não sei"
+                    "resposta": "Não sei",
+                    "checked": false
                 }
             ]
         },
@@ -687,18 +831,22 @@
             "nome": "atraso neuropsicomotor",
             "pergunta": "Paciente apresenta atraso neuropsicomotor?",
             "multiplaEscolha": false,
+            "respondida": false,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "Sim"
+                    "resposta": "Sim",
+                    "checked": false
                 },
                 {
                     "id": "1",
-                    "resposta": "Não"
+                    "resposta": "Não",
+                    "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "Não sei"
+                    "resposta": "Não sei",
+                    "checked": false
                 }
             ]
         }

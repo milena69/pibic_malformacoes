@@ -17,6 +17,10 @@ import {
 import { useAlert } from "react-alert";
 import { types } from "react-alert";
 import { positions } from "react-alert";
+
+import * as animation from "../../assets/animation.json";
+import { useParams, useNavigate } from "react-router-dom";
+
 const Home = () => {
   const [isAnimated, setIsAnimated] = useState(false);
   const [step, setStep] = useState(0);
@@ -24,44 +28,11 @@ const Home = () => {
   const [arrayQuestionario, setArrayQuestionario] = useState([]);
   const [respostasQuestao, setRespostasQuestao] = useState([]);
   const alert = useAlert();
-
+  const navigate = useNavigate();
   useEffect(() => {
     setIsLoading(true);
-    let newArrayQuestionario;
-    let respostaChecked = questionario.perguntas[step].respostas.some(
-      (resposta) => resposta?.checked
-    );
-    // let newRepostas = pergunta.respostas.some((resposta => resposta?.checked))
-    if (!respostaChecked) {
-      newArrayQuestionario = questionario.perguntas.map((pergunta) => {
-        let newRepostas = pergunta.respostas.map((resposta) => ({
-          ...resposta,
-          checked: false,
-        }));
-        return {
-          ...pergunta,
-          respostas: newRepostas,
-          respondida: false,
-        };
-      });
-      console.log("respostaChecked if", respostaChecked);
-    } else {
-      console.log("respostaChecked else", respostaChecked);
-    }
-
-    // let newArrayQuestionario = questionario.perguntas.map((pergunta) => {
-    //   let newRepostas = pergunta.respostas.map((resposta) => ({
-    //     ...resposta,
-    //      checked: false,
-    //   }));
-    //   return {
-    //     ...pergunta,
-    //     respostas: newRepostas,
-    //     respondida: false,
-    //   };
-    // });
-    setArrayQuestionario(newArrayQuestionario);
-    setRespostasQuestao(newArrayQuestionario[step].respostas);
+    setRespostasQuestao(questionario.perguntas[step]?.respostas);
+    setArrayQuestionario(questionario.perguntas);
     setIsLoading(false);
   }, []);
 
@@ -86,10 +57,6 @@ const Home = () => {
       alert.show("Preencha uma resposta", {
         //position: positions.MIDDLE_RIGHT,
       });
-      // alert.show(<AlertaToastError>Oh look, an alert!</AlertaToastError>, {
-      //   type: types.ERROR,
-      // });
-      //  window.alert("preenche direito");
     }
   };
 
@@ -107,7 +74,7 @@ const Home = () => {
     let newRespostas = [];
 
     // Se não for múltiplaEscolha troca tudo pra falso antes de trocar o que foi clicado
-    if (!arrayQuestionario[step].multiplaEscolha) {
+    if (!arrayQuestionario[step]?.multiplaEscolha) {
       newRespostas = respostasQuestao.map(({ id, resposta }) => {
         return {
           id,
@@ -131,8 +98,14 @@ const Home = () => {
   };
 
   const handleConcluir = () => {
-    //respostaQuestao.some(resposta => resposta.checked)
-    window.alert("acabouuu, que festa!");
+    if (respostasQuestao.some((resposta) => resposta.checked)) {
+      window.location.href =
+        "https://docs.google.com/forms/d/e/1FAIpQLSfeY_o_dSRTasRt6XKdy_8O1MzZDVnx0HJSmakVZkReCPHvPw/viewform";
+    } else {
+      alert.show("Preencha uma resposta", {
+        //position: positions.MIDDLE_RIGHT,
+      });
+    }
   };
 
   return (
@@ -149,9 +122,9 @@ const Home = () => {
                 {step + 1}/{arrayQuestionario.length}
               </SpanProgress> */}
             </ProgressWrapper>
-            <Titulo>{arrayQuestionario[step].pergunta}</Titulo>
+            <Titulo>{arrayQuestionario[step]?.pergunta}</Titulo>
             <DivRespostas>
-              {arrayQuestionario[step].respostas.map(({ resposta, id }) => {
+              {arrayQuestionario[step]?.respostas.map(({ resposta, id }) => {
                 return (
                   <FormControlLabel
                     key={id}
@@ -177,6 +150,7 @@ const Home = () => {
               <Buttons
                 titulo="Próximo"
                 onClick={handleAvancar}
+                style={{ textDecoration: "none" }}
                 {...(step + 1 === arrayQuestionario.length && {
                   titulo: "Concluir",
                   onClick: handleConcluir,
@@ -191,49 +165,3 @@ const Home = () => {
 };
 
 export default Home;
-
-//  <div
-//   style={{
-//     justifyContent: "center",
-//     alignItems: "center",
-//     display: "flex",
-//   }}
-// >
-//   {requestState.status === RequestActionTypes.FETCHING && (
-//     <div>
-//       <CircularProgress color="inherit" size={16} />
-//     </div>
-//   )}
-//   {requestState.status === RequestActionTypes.SUCCESS &&
-//     produtos?.payload?.produtos?.map((produto, index) => (
-//       <div key={index}>
-//         <li>{produto.descricao}</li>
-//         <li>{produto.conveniada}</li>
-//       </div>
-//     ))}
-//   {requestState.status !== RequestActionTypes.SUCCESS && (
-//     <h1>{mensagemErro}</h1>
-//   )}
-// </div>
-
-// const handleCheck = (ev) => {
-//   const target = ev.target;
-//   const id = target.id;
-//   let questao = arrayQuestionario[step];
-//   let newRespondidas = questao.respostas.map((resposta) => ({
-//     ...resposta,
-//     respondida: false,
-//   }));
-
-//   newRespondidas = questao.respostas[id].respondida = target.checked;
-//   questao.respostas = newRespondidas;
-//   let newQuestionario = arrayQuestionario.filter(
-//     (questao) => questao[step].respostas[id].id != id
-//   );
-//   setArrayQuestionario([newQuestionario, questao]);
-//   // console.log("cagada", arrayQuestionario);
-//   // let newChecked = [];
-//   // newChecked[id] = target.checked;
-//   // console.log("checkou: " + newChecked);
-//   // setChecked(newChecked);
-// };
