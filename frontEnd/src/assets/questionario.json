@@ -601,8 +601,32 @@
         },
         {
             "id": "16",
-            "nome": "características da língua",
-            "pergunta": "Observando as características da língua, é possível constatar que ela apresenta:",
+            "nome": "desenvolvimento dos pelos",
+            "pergunta": "Sobre o desenvolvimento dos pelos, é possível observar presença de:",
+            "multiplaEscolha": true,
+            "respondida": true,
+            "respostas": [
+                {
+                    "id": "0",
+                    "resposta": "não há malformação aparente",
+                    "checked": true
+                },
+                {
+                    "id": "1",
+                    "resposta": "hipertricose",
+                    "checked": false
+                },
+                {
+                    "id": "2",
+                    "resposta": "alopecia",
+                    "checked": false
+                }
+            ]
+        },
+        {
+            "id": "17",
+            "nome": "formação do tórax e peito",
+            "pergunta": "Sobre a formação do tórax e peito, é possível observar a presença de:",
             "multiplaEscolha": true,
             "respondida": true,
             "respostas": [
@@ -733,23 +757,23 @@
         {
             "id": "21",
             "nome": "atraso neuropsicomotor",
-            "pergunta": "Paciente apresenta atraso neuropsicomotor?",
+            "pergunta": "Paciente apresenta histórico cardiopático?",
             "multiplaEscolha": false,
             "respondida": true,
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "Paciente apresenta histórico cardiopático?",
+                    "resposta": "Sim",
                     "checked": true
                 },
                 {
                     "id": "1",
-                    "resposta": "implantação baixa",
+                    "resposta": "Não",
                     "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "orelhas proeminentes",
+                    "resposta": "Não foi possível dizer",
                     "checked": false
                 }
             ]
@@ -780,7 +804,7 @@
         },
         {
             "id": "23",
-            "nome": "formação das orelhas",
+            "nome": "idade do pai",
             "pergunta": "A idade do pai do(a) paciente durante a concepção era acima de 40 anos?",
             "multiplaEscolha": false,
             "respondida": false,
