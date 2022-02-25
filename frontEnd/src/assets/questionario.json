@@ -763,17 +763,17 @@
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "Sim",
+                    "resposta": "sim",
                     "checked": true
                 },
                 {
                     "id": "1",
-                    "resposta": "Não",
+                    "resposta": "não",
                     "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "Não foi possível dizer",
+                    "resposta": "não foi possível dizer",
                     "checked": false
                 }
             ]
@@ -787,17 +787,17 @@
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "Sim",
+                    "resposta": "sim",
                     "checked": false
                 },
                 {
                     "id": "1",
-                    "resposta": "Não",
+                    "resposta": "não",
                     "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "Não sei",
+                    "resposta": "não sei",
                     "checked": false
                 }
             ]
@@ -811,17 +811,17 @@
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "Sim",
+                    "resposta": "sim",
                     "checked": false
                 },
                 {
                     "id": "1",
-                    "resposta": "Não",
+                    "resposta": "não",
                     "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "Não sei",
+                    "resposta": "não sei",
                     "checked": false
                 }
             ]
@@ -835,17 +835,17 @@
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "Sim",
+                    "resposta": "sim",
                     "checked": false
                 },
                 {
                     "id": "1",
-                    "resposta": "Não",
+                    "resposta": "não",
                     "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "Não sei",
+                    "resposta": "não sei",
                     "checked": false
                 }
             ]
@@ -859,17 +859,17 @@
             "respostas": [
                 {
                     "id": "0",
-                    "resposta": "Sim",
+                    "resposta": "sim",
                     "checked": false
                 },
                 {
                     "id": "1",
-                    "resposta": "Não",
+                    "resposta": "não",
                     "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "Não sei",
+                    "resposta": "não sei",
                     "checked": false
                 }
             ]
