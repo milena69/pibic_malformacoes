@@ -22,8 +22,12 @@ export const BodyContent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-`;
+  min-height: 100vh; 
+  padding: 50px 0 50px 0;
+  @media (max-width: 500px) {
+    min-height: 90vh;
+  }
+  `;
 
 export const DivCenter = styled(Container)`
   display: flex;
