@@ -550,22 +550,22 @@
                 },
                 {
                     "id": "1",
-                    "resposta": "Hipotonia",
+                    "resposta": "hipotonia",
                     "checked": false
                 },
                 {
                     "id": "2",
-                    "resposta": "Hipertonia",
+                    "resposta": "hipertonia",
                     "checked": false
                 },
                 {
                     "id": "3",
-                    "resposta": "Ataxia",
+                    "resposta": "ataxia",
                     "checked": false
                 },
                 {
                     "id": "4",
-                    "resposta": "Distonia",
+                    "resposta": "distonia",
                     "checked": false
                 }
             ]
