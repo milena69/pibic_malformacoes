@@ -756,7 +756,7 @@
         },
         {
             "id": "21",
-            "nome": "atraso neuropsicomotor",
+            "nome": "histórico cardiopático",
             "pergunta": "Paciente apresenta histórico cardiopático?",
             "multiplaEscolha": false,
             "respondida": true,
