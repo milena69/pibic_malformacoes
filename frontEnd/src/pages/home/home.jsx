@@ -20,6 +20,7 @@ import { positions } from "react-alert";
 
 import * as animation from "../../assets/animation.json";
 import { useParams, useNavigate } from "react-router-dom";
+import { HorizontalLinearStepper } from "../../components/linear-stepper/linear-stepper";
 
 const Home = () => {
   const [isAnimated, setIsAnimated] = useState(false);
@@ -114,10 +115,16 @@ const Home = () => {
         {!isLoading && (
           <>
             <ProgressWrapper>
-              <ProgressBar
+              {/* <ProgressBar
                 progresso={((step + 1) * 100) / arrayQuestionario.length}
                 animated={isAnimated}
-              />
+              /> */}
+              {/* 
+              <HorizontalLinearStepper
+                activeStep={step + 1}
+                arrayStep={arrayQuestionario.length}
+              /> */}
+              {/* {arrayQuestionario.length} */}
               {/* <SpanProgress>
                 {step + 1}/{arrayQuestionario.length}
               </SpanProgress> */}
@@ -157,6 +164,11 @@ const Home = () => {
                 })}
               />
             </ButtonWrapper>
+            {/* <div>
+              <button onClick={() => navigate("/agradecimento")}>
+                exemplo de steeper
+              </button>
+            </div> */}
           </>
         )}
       </Body>
