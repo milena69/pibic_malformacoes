@@ -5,7 +5,8 @@ import Container from '@mui/material/Container';
 export const Containers = styled(Container)`
   box-shadow: 0px 3px 10px #d6d6d6, 0px 0px 33px #d6d6d6, 0px 8px 400px #d6d6d6;
   border-radius: 1rem;
-  width: 50vw;
+  /* width: 50vw; */
+  width: 100vw;
   min-width: 260px;
   display: flex;
   align-items: center;
