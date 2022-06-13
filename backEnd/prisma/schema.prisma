@@ -1,0 +1,123 @@
+generator client {
+  provider = "prisma-client-js"
+}
+generator erd {
+  provider = "prisma-erd-generator"
+  output = "./ERD.pdf"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model sindrome {
+  id_sindrome                    Int                              @id @default(autoincrement())
+  nome_sindrome                  String                           @db.VarChar(255)
+  cod_orpha_sindrome             String                           @db.VarChar(11)
+  associa_especialidade_sindrome associa_especialidade_sindrome[]
+  associa_sindrome_sintoma       associa_sindrome_sintoma[]
+}
+
+model analise_paciente {
+  id_paciente            Int         @id @default(autoincrement())
+  fk_atendimento         Int
+  fk_resultado           Int
+  idade                  Int
+  sexo                   String      @db.VarChar(100)
+  peso                   String      @db.VarChar(100)
+  altura                 String      @db.VarChar(255)
+  desenv_cefalico        String      @db.VarChar(255)
+  form_olho              String      @db.VarChar(255)
+  form_pescoco           String      @db.VarChar(255)
+  form_coluna            String      @db.VarChar(255)
+  form_mao               String      @db.VarChar(255)
+  form_pe                String      @db.VarChar(255)
+  form_labio_palato      String      @db.VarChar(255)
+  caracteristica_lingua  String      @db.VarChar(255)
+  desenv_pelo            String      @db.VarChar(255)
+  form_orgao_rep         String      @db.VarChar(255)
+  form_nariz             String      @db.VarChar(255)
+  form_orelha            String      @db.VarChar(255)
+  hist_cardiopatico      Boolean
+  idade_materna          Boolean
+  idade_paterna          Boolean
+  aquisicao_linguagem    Boolean
+  atraso_neuropsicomotor Boolean
+  atendimento            atendimento @relation(fields: [fk_atendimento], references: [id_atendimento])
+  resultado              resultado   @relation(fields: [fk_resultado], references: [id_resultado])
+  relatorio              relatorio[]
+
+  @@index([fk_atendimento], name: "fk_atendimento_analise")
+  @@index([fk_resultado], name: "fk_resultado_analise")
+}
+
+model associa_especialidade_sindrome {
+  id_espec_sind        Int                  @id @default(autoincrement())
+  fk_especialidade     Int
+  fk_sindrome          Int
+  especialidade_medica especialidade_medica @relation(fields: [fk_especialidade], references: [id_especialidade])
+  sindrome             sindrome             @relation(fields: [fk_sindrome], references: [id_sindrome])
+  resultado            resultado[]
+
+  @@index([fk_especialidade], name: "fk_espec")
+  @@index([fk_sindrome], name: "fk_sind")
+}
+
+model associa_sindrome_sintoma {
+  id_sind_sint Int         @id @default(autoincrement())
+  fk_sindrome  Int
+  fk_sintoma   Int
+  sindrome     sindrome    @relation(fields: [fk_sindrome], references: [id_sindrome])
+  sintoma      sintoma     @relation(fields: [fk_sintoma], references: [id_sintoma])
+  resultado    resultado[]
+
+  @@index([fk_sindrome], name: "fk_sindrome")
+  @@index([fk_sintoma], name: "fk_sint")
+}
+
+model atendimento {
+  id_atendimento    Int                @id @default(autoincrement())
+  data              DateTime           @default(now()) @db.DateTime(0)
+  hora              DateTime           @default(now()) @db.Timestamp(0)
+  localizacao       DateTime           @default(now()) @db.Timestamp(0)
+  ip                Int
+  profissao_usuario String             @db.VarChar(100)
+  analise_paciente  analise_paciente[]
+}
+
+model especialidade_medica {
+  id_especialidade               Int                              @id @default(autoincrement())
+  nome_especialidade             String                           @db.VarChar(255)
+  associa_especialidade_sindrome associa_especialidade_sindrome[]
+}
+
+model relatorio {
+  id_relatorio         Int              @id @default(autoincrement())
+  data                 DateTime         @default(now()) @db.Timestamp(0)
+  hora                 DateTime         @default(now()) @db.Timestamp(0)
+  fk_resultado_analise Int
+  analise_paciente     analise_paciente @relation(fields: [fk_resultado_analise], references: [fk_resultado])
+
+  @@index([fk_resultado_analise], name: "relatorio_resultado")
+}
+
+model resultado {
+  id_resultado                   Int                            @id @default(autoincrement())
+  fk_sind_sint                   Int
+  fk_espec_sind                  Int
+  associa_especialidade_sindrome associa_especialidade_sindrome @relation(fields: [fk_espec_sind], references: [id_espec_sind])
+  associa_sindrome_sintoma       associa_sindrome_sintoma       @relation(fields: [fk_sind_sint], references: [id_sind_sint])
+  analise_paciente               analise_paciente[]
+
+  @@index([fk_espec_sind], name: "result_espec_sind")
+  @@index([fk_sind_sint], name: "result_sind_sint")
+}
+
+model sintoma {
+  id_sintoma               Int                        @id @default(autoincrement())
+  nome_sintoma             String                     @db.VarChar(255)
+  descricao_sintoma        String                     @db.VarChar(255)
+  cod_sintoma              String                     @db.VarChar(255)
+  associa_sindrome_sintoma associa_sindrome_sintoma[]
+}
